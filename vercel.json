@@ -1,0 +1,12 @@
+{
+  "headers": [
+    {
+      "source": "/(.*)\\.(css|js|png|jpg|jpeg|gif|svg|webp|ico|woff2)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    }
+  ],
+  "redirects": [
+    { "source": "/guides/:path*", "destination": "/blog/:path*", "permanent": true },
+    { "source": "/blog/best-paying-student-jobs-groningen", "destination": "/blog/best-paying-student-jobs-groningen-2025", "permanent": true }
+  ]
+}

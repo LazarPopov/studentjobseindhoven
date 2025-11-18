@@ -1,0 +1,144 @@
+/* src/app/globals.css */
+@import "tailwindcss";
+
+/* ---------- Theme tokens (Tailwind v4) ---------- */
+@theme {
+  /* Brand palette */
+  --color-brand-50:  #eefcf6;
+  --color-brand-100: #d5f6e6;
+  --color-brand-200: #a9eccd;
+  --color-brand-300: #78deb1;
+  --color-brand-400: #46cf95;
+  --color-brand-500: #18b777;
+  --color-brand-600: #0e9c63; /* primary */
+  --color-brand-700: #0b7b4f;
+  --color-brand-800: #085e3e;
+  --color-brand-900: #064a32;
+
+  /* Radii & shadow tokens */
+  --radius-xl: 0.875rem;
+  --radius-2xl: 1.25rem;
+  --shadow-card: 0 4px 24px rgba(0,0,0,.06);
+}
+
+/* ---------- Base (readable defaults, mobile-first) ---------- */
+@layer base {
+  html, body { @apply bg-white text-slate-900 antialiased; }
+  body { @apply min-h-svh; }
+
+  /* Better link UX */
+  a { @apply underline underline-offset-2 decoration-transparent hover:decoration-current; }
+
+  /* Images scale nicely */
+  img, svg, video, canvas { @apply max-w-full h-auto; }
+
+  /* Form accents & placeholders */
+  :where(input, select, textarea) { @apply bg-white text-slate-900 placeholder:text-slate-400; accent-color: var(--color-brand-600); }
+
+  /* Anchor jump offset for sticky headers */
+  h2[id], h3[id], h4[id], h5[id] { scroll-margin-top: 5rem; }
+
+  /* Text selection */
+  ::selection { background: var(--color-brand-200); color: #0b2b1f; }
+}
+
+/* ---------- Components (reusable helpers) ---------- */
+@layer components {
+  .section     { @apply px-4 sm:px-6 py-8 md:py-12; }
+  .section-alt { @apply px-4 sm:px-6 py-8 md:py-12 bg-slate-50; }
+
+  .card  { @apply rounded-[var(--radius-2xl)] border border-slate-200 bg-white p-5 shadow-sm; }
+  .badge { @apply inline-flex items-center rounded-full border border-slate-300 px-2 py-0.5 text-xs text-slate-700; }
+
+  .btn         { @apply inline-flex items-center justify-center rounded-xl px-4 py-2.5 text-sm font-medium transition-colors; }
+  .btn-primary { @apply inline-flex items-center justify-center rounded-xl px-4 py-2.5 text-sm font-medium bg-brand-600 text-white hover:bg-brand-700; }
+  .btn-ghost   { @apply inline-flex items-center justify-center rounded-xl px-4 py-2.5 text-sm font-medium border border-slate-300 hover:bg-slate-100; }
+
+  /* Optional: apply a consistent focus ring */
+  .focus-ring { @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2; }
+}
+
+/* ---------- Utilities you might reuse ---------- */
+@layer utilities {
+  .container-max { @apply mx-auto max-w-6xl; }
+  .shadow-card   { box-shadow: var(--shadow-card); }
+
+  /* Toast animation */
+  @keyframes slide-in {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slide-in {
+    animation: slide-in 0.3s ease-out;
+  }
+
+  /* Badge pulse animation */
+  @keyframes pulse-badge {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  .animate-pulse-badge {
+    animation: pulse-badge 2s ease-in-out infinite;
+  }
+
+  /* Fade in animation */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out;
+  }
+
+  /* Scale in animation */
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.3s ease-out;
+  }
+
+  /* Checkmark animation */
+  @keyframes check-pop {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .animate-check-pop {
+    animation: check-pop 0.3s ease-out;
+  }
+}

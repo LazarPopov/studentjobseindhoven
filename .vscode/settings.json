@@ -1,0 +1,19 @@
+{
+  // Let Tailwind’s plugin handle at-rules and utilities
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
+  "css.lint.unknownAtRules": "ignore",
+
+  // Ensure the Tailwind extension runs everywhere
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html",
+    "css": "css",
+    "postcss": "css"
+  },
+  // Optional: point Tailwind extension to your CSS entry
+  "tailwindCSS.experimental.configFile": null
+}
