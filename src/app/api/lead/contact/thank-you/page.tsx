@@ -2,9 +2,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Message sent | Student Jobs Groningen",
+  title: "Message sent | Student Jobs Amsterdam",
   description: "Thanks for your message — we’ll get back to you shortly.",
-  alternates: { canonical: "https://studentjobsgroningen.nl/contact/thank-you" },
+  alternates: { canonical: "https://studentjobsAmsterdam.nl/contact/thank-you" },
 };
 
 export default function ContactThankYou() {

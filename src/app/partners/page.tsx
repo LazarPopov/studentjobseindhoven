@@ -12,15 +12,15 @@ type Partner = {
 };
 
 export const metadata: Metadata = {
-  title: "Partners | Student Jobs Groningen",
+  title: "Partners | Student Jobs Amsterdam",
   description:
-    "Our SEO, community, and hiring partners helping students find great jobs in Groningen.",
-  alternates: { canonical: "https://studentjobsgroningen.nl/partners" },
+    "Our SEO, community, and hiring partners helping students find great jobs in Amsterdam.",
+  alternates: { canonical: "https://studentjobsamsterdam.nl/partners" },
   openGraph: {
-    title: "Partners | Student Jobs Groningen",
+    title: "Partners | Student Jobs Amsterdam",
     description:
-      "Our SEO, community, and hiring partners helping students find great jobs in Groningen.",
-    url: "https://studentjobsgroningen.nl/partners",
+      "Our SEO, community, and hiring partners helping students find great jobs in Amsterdam.",
+    url: "https://studentjobsamsterdam.nl/partners",
     type: "website",
   },
 };
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
 const PARTNERS: Partner[] = [
   // {
   //   name: "The Storage Scanner",
-  //   url: "https://thestoragescanner.com/en-NL/cities/zuid-holland/groningen",
+  //   url: "https://thestoragescanner.com/en-NL/cities/zuid-holland/Amsterdam",
   //   descriptionHtml:
-  //     `The leading independent platform in Groningen for comparing self-storage providers. Easily find and compare storage units and garage boxes by location, size, and price. Explore <a href="https://thestoragescanner.com/en-NL/cities/zuid-holland/groningen" target="_blank" rel="noopener noreferrer">self storage in Groningen</a> to choose the best option for your budget.`,
+  //     `The leading independent platform in Amsterdam for comparing self-storage providers. Easily find and compare storage units and garage boxes by location, size, and price. Explore <a href="https://thestoragescanner.com/en-NL/cities/zuid-holland/Amsterdam" target="_blank" rel="noopener noreferrer">self storage in Amsterdam</a> to choose the best option for your budget.`,
   //   logoUrl: "/logos/storage-scanner.png",
   // },
   {
@@ -45,7 +45,7 @@ const PARTNERS: Partner[] = [
     name: "RentSwap",
     url: "https://rentswap.io",
     descriptionHtml:
-      `A handover marketplace that connects leaving tenants with incoming renters to reduce vacancy time and friction. Great for discovering <a href="https://rentswap.io" target="_blank" rel="noopener noreferrer">student rooms in Rotterdam</a> through warm introductions.`,
+      `A handover marketplace that connects leaving tenants with incoming renters to reduce vacancy time and friction. Great for discovering <a href="https://rentswap.io" target="_blank" rel="noopener noreferrer">student rooms in Amsterdam</a> through warm introductions.`,
     logoUrl: "/logos/rentswap.png",
   },
   {
@@ -76,7 +76,7 @@ export default function PartnersPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ItemList",
-            name: "Student Jobs Rotterdam Partners",
+            name: "Student Jobs Amsterdam Partners",
             itemListElement: PARTNERS.map((p, i) => ({
               "@type": "Organization",
               position: i + 1,

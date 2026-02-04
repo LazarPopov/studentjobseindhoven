@@ -1,0 +1,613 @@
+// src/app/part-time-jobs-amsterdam-students/page.tsx
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+
+const PUBLISH_DATE = "2026-10-02";
+const MODIFIED_DATE = "2026-10-02";
+const CANONICAL =
+  "https://studentjobsamsterdam.nl/part-time-jobs-amsterdam-students";
+
+// Use chloe3 from /public/blog/
+const HERO_IMAGE_PATH =
+  "/blog/erasmus-experience-in-amsterdam-netherlands-by-chloe3.jpg";
+
+// Absolute URL for OG/Twitter/JSON-LD
+const OG_IMAGE_URL = `https://studentjobsamsterdam.nl${HERO_IMAGE_PATH}`;
+
+export const metadata: Metadata = {
+  title:
+    "Student part-time jobs Amsterdam (2026) – Well-paid, English-friendly & weekend",
+  description:
+    "The ultimate guide to student part-time jobs in Amsterdam: evening/weekend, English-friendly, no experience. Hourly pay tables, contract types, neighborhoods, and quick filters.",
+  keywords: [
+    "student part-time jobs Amsterdam",
+    "student jobs Amsterdam",
+    "part-time vacancies Amsterdam",
+    "bijbaan Amsterdam",
+  ],
+  alternates: { canonical: CANONICAL },
+  openGraph: {
+    title:
+      "Student part-time jobs Amsterdam (2026) – Well-paid, English-friendly & weekend",
+    description:
+      "Pillar page with fast filters (evening, weekend, English, no experience), hourly pay per sector, and live vacancies in Amsterdam.",
+    url: CANONICAL,
+    type: "article",
+    locale: "en_NL",
+    siteName: "Student Jobs Amsterdam",
+    publishedTime: PUBLISH_DATE,
+    modifiedTime: MODIFIED_DATE,
+    images: [{ url: OG_IMAGE_URL }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "Student part-time jobs Amsterdam (2026) – Well-paid, English-friendly & weekend",
+    description:
+      "Where to quickly find a part-time job in Amsterdam? Check filters, pay tables, and live vacancies.",
+    images: [OG_IMAGE_URL],
+  },
+  robots: { index: true, follow: true },
+};
+
+export default function StudentenBijbaanAmsterdam() {
+  return (
+    <section className="section">
+      <div className="mx-auto max-w-6xl">
+        {/* HEADER */}
+        <header className="max-w-3xl">
+          <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
+            Student part-time jobs in Amsterdam: the ultimate guide (2026)
+          </h1>
+          <p className="mt-3 text-sm text-slate-600">
+            By <span className="font-medium">Student Jobs Amsterdam</span> •
+            Updated{" "}
+            {new Date(MODIFIED_DATE).toLocaleDateString("en-NL", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </p>
+
+          {/* Language toggle / A/B */}
+          <div className="mt-3">
+            <Link
+              href="/studenten-bijbaan-amsterdam"
+              className="inline-flex items-center rounded-full border px-3 py-1 text-xs md:text-sm underline hover:no-underline"
+              aria-label="Lees in het Nederlands"
+              data-ab="dutch-cta"
+            >
+              Lees in het Nederlands →
+            </Link>
+          </div>
+
+          <div className="mt-5 overflow-hidden rounded-2xl border bg-white">
+            <Image
+              src={HERO_IMAGE_PATH}
+              alt="Erasmus experience in Amsterdam"
+              width={1280}
+              height={720}
+              priority
+              className="w-full h-auto object-cover"
+            />
+          </div>
+
+          {/* Quick filters */}
+          <div className="mt-6 flex flex-wrap gap-2">
+            <Link
+              href="/jobs?city=Amsterdam&evening=true"
+              className="rounded-full border px-3 py-1 text-sm underline"
+            >
+              Evening
+            </Link>
+            <Link
+              href="/jobs?city=Amsterdam&weekend=true"
+              className="rounded-full border px-3 py-1 text-sm underline"
+            >
+              Weekend
+            </Link>
+            <Link
+              href="/jobs?city=Amsterdam&noExperience=true"
+              className="rounded-full border px-3 py-1 text-sm underline"
+            >
+              No experience
+            </Link>
+            <Link
+              href="/jobs?city=Amsterdam&english=true"
+              className="rounded-full border px-3 py-1 text-sm underline"
+            >
+              English-friendly
+            </Link>
+            <Link
+              href="/jobs?city=Amsterdam"
+              className="rounded-full border px-3 py-1 text-sm underline"
+            >
+              All vacancies (Amsterdam)
+            </Link>
+          </div>
+        </header>
+
+        {/* CONTENT + TOC */}
+        <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_320px]">
+          {/* TOC (mobile first) */}
+          <nav
+            aria-label="Table of contents"
+            className="
+              order-1 lg:order-2
+              lg:sticky lg:top-24 h-max
+              rounded-2xl border p-4 bg-slate-50
+              text-sm text-slate-700
+            "
+          >
+            <div className="font-semibold">On this page</div>
+            <ul className="mt-2 space-y-1">
+              <li>
+                <a href="#where-to-find" className="underline">
+                  Where to find a job fast (neighborhoods)
+                </a>
+              </li>
+              <li>
+                <a href="#english" className="underline">
+                  English-speaking student jobs
+                </a>
+              </li>
+              <li>
+                <a href="#schedules" className="underline">
+                  Weekend & evening schedules
+                </a>
+              </li>
+              <li>
+                <a href="#no-experience" className="underline">
+                  No experience: 10 entry-level roles
+                </a>
+              </li>
+              <li>
+                <a href="#pay" className="underline">
+                  Hourly pay & tips (table)
+                </a>
+              </li>
+              <li>
+                <a href="#contracts" className="underline">
+                  Contract types
+                </a>
+              </li>
+              <li>
+                <a href="#non-eu" className="underline">
+                  Non-EU students
+                </a>
+              </li>
+              <li>
+                <a href="#apply" className="underline">
+                  Application tips + free CV
+                </a>
+              </li>
+              <li>
+                <a href="#live" className="underline">
+                  Live vacancies (Amsterdam)
+                </a>
+              </li>
+              <li>
+                <a href="#faq" className="underline">
+                  FAQ
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          {/* ARTICLE */}
+          <article
+            className="
+              order-2 lg:order-1
+              max-w-3xl
+              space-y-6
+              leading-relaxed text-slate-800
+              [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-semibold
+              [&_h3]:mt-6  [&_h3]:text-xl  [&_h3]:font-semibold
+              [&_p]:mt-3   [&_ul]:mt-3   [&_ol]:mt-3
+              [&_ul]:list-disc [&_ul]:pl-6
+              [&_ol]:list-decimal [&_ol]:pl-6
+              [&_a]:underline hover:[&_a]:no-underline
+            "
+          >
+            <h2 id="where-to-find">
+              Where to find a part-time job fast in Amsterdam (Kralingen/EUR,
+              Centrum, Zuidplein, Waalhaven)
+            </h2>
+            <p>
+              You’ll match fastest when you can start close to home. Begin with{" "}
+              <Link href="/jobs?city=Amsterdam">all vacancies</Link> and filter
+              by your neighborhood:
+            </p>
+            <ul>
+              <li>
+                <strong>Kralingen / EUR</strong>: cafés, tutoring, campus jobs,
+                barista.
+              </li>
+              <li>
+                <strong>Centrum</strong>: hospitality, retail, events
+                (festival/venue).
+              </li>
+              <li>
+                <strong>Zuidplein</strong>: retail, events, customer support.
+              </li>
+              <li>
+                <strong>Waalhaven / Port</strong>: logistics, warehouse,
+                evening/night allowances.
+              </li>
+            </ul>
+
+            <h2 id="english">
+              English-speaking student jobs (hospitality, delivery/logistics,
+              retail, customer support)
+            </h2>
+            <p>
+              Amsterdam has many <strong>English-speaking teams</strong>,
+              especially in hospitality, delivery/logistics, international
+              retail, and support. Start here:{" "}
+              <Link href="/jobs?city=Amsterdam&english=true">
+                English-friendly vacancies
+              </Link>
+              .
+            </p>
+
+            <h2 id="schedules">
+              Weekend & evening: schedules that fit your classes
+            </h2>
+            <ul>
+              <li>
+                <strong>Evening shifts</strong> (after 17:00) in logistics,
+                events, hospitality.
+              </li>
+              <li>
+                <strong>Weekends</strong> to maximize hours without lecture
+                clashes.
+              </li>
+              <li>
+                <strong>Allowances</strong>: evening/night/weekend +{" "}
+                <strong>8% holiday pay</strong> (often monthly/annual).
+              </li>
+            </ul>
+
+            <h2 id="no-experience">No experience: 10 entry-level roles</h2>
+            <ul>
+              <li>Shelf stocker</li>
+              <li>Dishwasher / Kitchen help</li>
+              <li>Courier (bike/car)</li>
+              <li>Host/Hostess</li>
+              <li>Flyer/Promo</li>
+              <li>Runner/Service</li>
+              <li>Warehouse associate</li>
+              <li>Cashier</li>
+              <li>Data labeling (remote)</li>
+              <li>Cleaning</li>
+            </ul>
+
+            <h2 id="pay">Hourly pay & tips: realistic ranges per sector</h2>
+            <div className="overflow-x-auto rounded-2xl border bg-white">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-slate-50">
+                  <tr>
+                    <th className="px-4 py-3">Sector</th>
+                    <th className="px-4 py-3">Hourly (gross)</th>
+                    <th className="px-4 py-3">Allowances</th>
+                    <th className="px-4 py-3">Tips/Bonus</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="px-4 py-3">
+                      Hospitality (barista/service)
+                    </td>
+                    <td className="px-4 py-3">€13 – €16</td>
+                    <td className="px-4 py-3">Weekend/evening</td>
+                    <td className="px-4 py-3">€1 – €3 p/h (tips, variable)</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3">Logistics / Warehouse</td>
+                    <td className="px-4 py-3">€14 – €18</td>
+                    <td className="px-4 py-3">Evening/night/weekend</td>
+                    <td className="px-4 py-3">—</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3">Delivery (platform/retail)</td>
+                    <td className="px-4 py-3">€13 – €17</td>
+                    <td className="px-4 py-3">Weekend/weather</td>
+                    <td className="px-4 py-3">Per ride/bonus</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3">Events / Crew / Lead</td>
+                    <td className="px-4 py-3">€13 – €17+</td>
+                    <td className="px-4 py-3">Weekend/evening</td>
+                    <td className="px-4 py-3">Lead premium</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3">Retail / Cashier</td>
+                    <td className="px-4 py-3">€13 – €16</td>
+                    <td className="px-4 py-3">Sunday/holiday</td>
+                    <td className="px-4 py-3">Staff discount</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3">Customer support</td>
+                    <td className="px-4 py-3">€14 – €17</td>
+                    <td className="px-4 py-3">Evening/weekend</td>
+                    <td className="px-4 py-3">KPI bonus</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3">Tutoring</td>
+                    <td className="px-4 py-3">€15 – €22</td>
+                    <td className="px-4 py-3">—</td>
+                    <td className="px-4 py-3">More with specialization</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm text-slate-600">
+              Indicative for 2026. Actual pay depends on age, experience, CBA,
+              and allowances.
+            </p>
+
+            <h2 id="contracts">
+              Contract types: part-time / temporary / on-call – what fits you?
+            </h2>
+            <ul>
+              <li>
+                <strong>Part-time</strong>: fixed weekly hours; predictable
+                schedule.
+              </li>
+              <li>
+                <strong>On-call (0-hours / min-max)</strong>: flexible; ask
+                about minimum hours and notice period.
+              </li>
+              <li>
+                <strong>Temporary / Agency</strong>: start fast; mind period and
+                allowances.
+              </li>
+            </ul>
+
+            <h2 id="non-eu">Non-EU students: hours limit, TWV (short & factual)</h2>
+            <p>
+              Non-EU students often have an{" "}
+              <strong>hours limit during the academic year</strong> and may need
+              a <strong>TWV (work permit)</strong> via the employer/agency.
+              Always check your personal situation and the latest rules at{" "}
+              <a
+                href="https://ind.nl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                IND
+              </a>{" "}
+              or{" "}
+              <a
+                href="https://www.rijksoverheid.nl/onderwerpen/werken-tijdens-studie"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                Rijksoverheid (Government)
+              </a>
+              .
+            </p>
+
+            <h2 id="apply">Application tips + free CV template (CTA)</h2>
+            <ul>
+              <li>
+                Keep your CV <strong>to 1 page</strong> with a short skills bar
+                (Dutch A2 / English C1 / Barista / Excel).
+              </li>
+              <li>
+                Apply <strong>before 10:00</strong> and{" "}
+                <strong>follow up the same day</strong>.
+              </li>
+              <li>
+                Mention <strong>areas you reach fast</strong> (Kralingen,
+                Centrum, Zuidplein, Waalhaven).
+              </li>
+            </ul>
+            <div className="rounded-2xl border p-5 bg-white">
+              <div className="font-semibold text-lg">Ready to start?</div>
+              <p className="mt-1">
+                See{" "}
+                <Link href="/jobs?city=Amsterdam">all vacancies (Amsterdam)</Link>
+                , <Link href="/jobs?city=Amsterdam&english=true">English-friendly</Link>
+                , or <Link href="/categories">browse categories</Link>. Employer?{" "}
+                <Link href="/employers">Feature your job</Link>.
+              </p>
+              <p className="mt-2 text-sm">
+                Free CV template:{" "}
+                <Link href="/assets/cv-template-student.pdf">download here</Link>.
+              </p>
+            </div>
+
+            <h2 id="live">Live vacancies (embed)</h2>
+            <p className="text-sm text-slate-600">
+              Tip: filter by{" "}
+              <Link href="/jobs?city=Amsterdam&evening=true">evening</Link>,{" "}
+              <Link href="/jobs?city=Amsterdam&weekend=true">weekend</Link>,{" "}
+              <Link href="/jobs?city=Amsterdam&noExperience=true">no experience</Link>
+              ,{" "}
+              <Link href="/jobs?city=Amsterdam&english=true">English-friendly</Link>.
+            </p>
+            <div className="rounded-2xl border bg-white p-4">
+              <Link href="/jobs?city=Amsterdam" className="underline">
+                Open live vacancies for Amsterdam
+              </Link>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <Link
+                  href="/categories/hospitality"
+                  className="rounded-full border px-3 py-1 text-sm underline"
+                >
+                  Hospitality
+                </Link>
+                <Link
+                  href="/categories/delivery"
+                  className="rounded-full border px-3 py-1 text-sm underline"
+                >
+                  Delivery / Logistics
+                </Link>
+                <Link
+                  href="/categories/retail"
+                  className="rounded-full border px-3 py-1 text-sm underline"
+                >
+                  Retail
+                </Link>
+                <Link
+                  href="/categories/events"
+                  className="rounded-full border px-3 py-1 text-sm underline"
+                >
+                  Events
+                </Link>
+                <Link
+                  href="/categories/support"
+                  className="rounded-full border px-3 py-1 text-sm underline"
+                >
+                  Customer support
+                </Link>
+                <Link
+                  href="/categories/tutoring"
+                  className="rounded-full border px-3 py-1 text-sm underline"
+                >
+                  Tutoring
+                </Link>
+              </div>
+            </div>
+
+            <h2 id="faq">FAQ</h2>
+            <h3>How many hours can I work?</h3>
+            <p>
+              Many students work <strong>8–20 hours per week</strong>. Additional
+              limits may apply for Non-EU students; check official sources or
+              with your employer/agency.
+            </p>
+
+            <h3>Are there English-speaking part-time jobs?</h3>
+            <p>
+              Yes. Especially in hospitality, delivery/logistics, retail, and
+              customer support. Start with{" "}
+              <Link href="/jobs?city=Amsterdam&english=true">
+                English-friendly vacancies
+              </Link>
+              .
+            </p>
+
+            <h3>What does a student earn in 2026?</h3>
+            <p>
+              Often <strong>€13–€17 per hour</strong> in
+              hospitality/logistics/retail and <strong>€15–€22</strong> for
+              tutoring. Allowances and tips can increase your hourly rate.
+            </p>
+
+            <h3>Which neighborhoods are most convenient?</h3>
+            <p>
+              <strong>Kralingen/EUR</strong> (campus/cafés),{" "}
+              <strong>Centrum</strong> (hospitality/retail/events),{" "}
+              <strong>Zuidplein</strong> (retail/events), and{" "}
+              <strong>Waalhaven</strong> (logistics/evening).
+            </p>
+          </article>
+        </div>
+
+        {/* JSON-LD: Article + Breadcrumb + FAQ */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              headline:
+                "Student part-time jobs Amsterdam (2026) – Well-paid, English-friendly & weekend",
+              description:
+                "Pillar guide for student part-time jobs in Amsterdam with fast filters, hourly pay tables, contract types, and live vacancies.",
+              image: OG_IMAGE_URL,
+              datePublished: PUBLISH_DATE,
+              dateModified: MODIFIED_DATE,
+              inLanguage: "en-NL",
+              author: {
+                "@type": "Organization",
+                name: "Student Jobs Amsterdam",
+                url: "https://studentjobsamsterdam.nl/",
+              },
+              publisher: {
+                "@type": "Organization",
+                name: "Student Jobs Amsterdam",
+              },
+              mainEntityOfPage: { "@type": "WebPage", "@id": CANONICAL },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://studentjobsamsterdam.nl/",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Student part-time jobs Amsterdam",
+                  item: CANONICAL,
+                },
+              ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "How many hours can I work?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text:
+                      "Many students work 8–20 hours per week. For Non-EU students, extra limits and permit requirements may apply; check the latest rules and your personal situation.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Are there English-speaking part-time jobs?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text:
+                      "Yes. Especially in hospitality, delivery/logistics, retail, and customer support. Filter for English-friendly vacancies to match faster.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "What does a student earn in 2026?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text:
+                      "Typically €13–€17 per hour in hospitality/logistics/retail and €15–€22 for tutoring. Evening/night/weekend allowances and tips can raise the hourly rate.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Which neighborhoods are most convenient?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text:
+                      "Kralingen/EUR (campus/cafés), Centrum (hospitality/retail/events), Zuidplein (retail/events), and Waalhaven (logistics/evening).",
+                  },
+                },
+              ],
+            }),
+          }}
+        />
+      </div>
+    </section>
+  );
+}

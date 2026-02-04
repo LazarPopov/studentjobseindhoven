@@ -5,26 +5,26 @@ import Link from "next/link";
 
 const POSTS = [
   {
-    slug: "studenten-bijbaan-groningen",
-    title: "Studenten bijbaan Rotterdam (2026) – Goed betaald, Engelstalig & weekend",
+    slug: "studenten-bijbaan-amsterdam",
+    title: "Studenten bijbaan Aotterdam (2026) – Goed betaald, Engelstalig & weekend",
     description:
-      "De ultieme gids voor een studenten bijbaan in Rotterdam: avond/weekend, Engelstalig, zonder ervaring. Uurloon-tabellen, contractvormen, wijken en snelle filters.",
+      "De ultieme gids voor een studenten bijbaan in Amsterdam: avond/weekend, Engelstalig, zonder ervaring. Uurloon-tabellen, contractvormen, wijken en snelle filters.",
   },
   {
-    slug: "student-jobs-groningen-complete-guide-2026",
-    title: "Student Jobs in Rotterdam — Complete Guide (2026)",
+    slug: "student-jobs-amsterdam-complete-guide-2026",
+    title: "Student Jobs in Amsterdam — Complete Guide (2026)",
     description:
       "Permits, contracts, pay, neighborhoods, and tactics to land a job fast.",
   },
   {
-    slug: "english-speaking-student-jobs-groningen",
-    title: "English-Speaking Student Jobs in Rotterdam (2026)",
+    slug: "english-speaking-student-jobs-amsterdam",
+    title: "English-Speaking Student Jobs in Amsterdam (2026)",
     description:
       "Where to find roles that don’t require Dutch, with quick-apply tips.",
   },
   {
-    slug: "best-paying-student-jobs-groningen-2026",
-    title: "Best-Paying Student Jobs in Rotterdam (2026)",
+    slug: "best-paying-student-jobs-amsterdam-2026",
+    title: "Best-Paying Student Jobs in Amsterdam (2026)",
     description:
       "Shift bonuses, industries, and certifications that increase pay.",
   },
@@ -32,9 +32,9 @@ const POSTS = [
 
 
 export const metadata: Metadata = {
-  title: "Blog | Student Jobs Rotterdam",
-  description: "Guides and tips to help you land a student job in Rotterdam.",
-  alternates: { canonical: "https://studentjobsgroningen.nl/blog" },
+  title: "Blog | Student Jobs Amsterdam",
+  description: "Guides and tips to help you land a student job in Amsterdam.",
+  alternates: { canonical: "https://studentjobsamsterdam.nl/blog" },
 };
 
 export default function BlogIndex() {
@@ -43,7 +43,7 @@ export default function BlogIndex() {
       <div className="mx-auto max-w-6xl">
         <h1 className="text-3xl md:text-5xl font-semibold">Blog</h1>
         <p className="mt-3 text-slate-700 max-w-2xl">
-          Practical, local guides for students working in Rotterdam.
+          Practical, local guides for students working in Amsterdam.
         </p>
 
         <div className="mt-8 grid gap-4 md:grid-cols-3">

@@ -259,7 +259,7 @@ export default function EmployerForm() {
       }
 
       // ✅ Add hardcoded region
-      formData.append("region", "groningen");
+      formData.append("region", "Amsterdam");
 
       // Add logo file if present
       if (logoFile) {
@@ -539,7 +539,7 @@ export default function EmployerForm() {
             <input
               name="city"
               required
-              defaultValue="Groningen"
+              defaultValue="Amsterdam"
               disabled={isSubmitting}
               maxLength={100}
               className="border rounded-xl px-4 py-3 disabled:bg-slate-50 disabled:text-slate-500"

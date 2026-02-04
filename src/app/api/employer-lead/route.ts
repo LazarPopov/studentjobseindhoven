@@ -63,9 +63,9 @@ export async function POST(req: Request) {
       job_title,
       employment_type: String(form.get("employmentType") || "PART_TIME"),
       category: String(form.get("category") || "hospitality"),
-      city: String(form.get("city") || "Groningen"),
+      city: String(form.get("city") || "Amsterdam"),
       area: String(form.get("area") || "").trim() || undefined,
-      region: String(form.get("region") || "groningen"),
+      region: String(form.get("region") || "Amsterdam"),
       base_salary_min: form.get("baseSalaryMin")
         ? parseFloat(String(form.get("baseSalaryMin")))
         : undefined,

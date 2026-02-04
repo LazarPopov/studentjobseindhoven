@@ -4,10 +4,10 @@ import BackButton from "@/components/BackButton";
 import EmployerForm from "./EmployerForm";
 
 export const metadata: Metadata = {
-  title: "Are you a business? Feature your job | Student Jobs Groningen",
+  title: "Are you a business? Feature your job | Student Jobs Amsterdam",
   description:
-    "Hire students in Groningen. Feature your job on the homepage, category pages, and our weekly newsletter.",
-  alternates: { canonical: "https://studentjobsrotterdam.nl/employers" },
+    "Hire students in Amsterdam. Feature your job on the homepage, category pages, and our weekly newsletter.",
+  alternates: { canonical: "https://studentjobsamsterdam.nl/employers" },
 };
 
 export default function EmployersPage() {
@@ -20,12 +20,12 @@ export default function EmployersPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            name: "Student Jobs Groningen",
-            url: "https://studentjobsrotterdam.nl/",
+            name: "Student Jobs Amsterdam",
+            url: "https://studentjobsamsterdam.nl/",
             contactPoint: {
               "@type": "ContactPoint",
               contactType: "sales",
-              email: "info@studentjobsrotterdam.nl",
+              email: "info@studentjobsamsterdam.nl",
               areaServed: "NL",
               availableLanguage: ["en", "nl"],
             },
@@ -43,7 +43,7 @@ export default function EmployersPage() {
             <BackButton />
           </div>
           <p className="mt-3 text-lg text-slate-700">
-            Reach active students in Groningen. Get qualified applicants fast via homepage & category placement, plus our weekly newsletter.
+            Reach active students in Amsterdam. Get qualified applicants fast via homepage & category placement, plus our weekly newsletter.
           </p>
           <div className="mt-6 flex gap-3">
             <a href="#submit" className="btn btn-primary" data-gtm-event="cta_business">

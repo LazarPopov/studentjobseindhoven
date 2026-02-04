@@ -1,4 +1,4 @@
-// src/app/page.tsx (Next.js App Router) — Groningen homepage (SEO-ready, rank-and-rent)
+// src/app/page.tsx (Next.js App Router) — Amsterdam homepage (SEO-ready, rank-and-rent)
 import type { Metadata } from "next";
 import Link from "next/link";
 import { listFeaturedJobs } from "@/data/jobs";
@@ -40,24 +40,24 @@ function JobCardLink({
 }
 
 export const metadata: Metadata = {
-  title: "Student Jobs in Groningen (2026) | Part-Time & English-Friendly Work",
+  title: "Student Jobs in Amsterdam (2026) | Part-Time & English-Friendly Work",
   description:
-    "Find student jobs in Groningen: hospitality, logistics, retail, tutoring and more. English-friendly roles, flexible hours, updated daily.",
-  alternates: { canonical: "https://studentjobsgroningen.nl/" },
+    "Find student jobs in Amsterdam: hospitality, logistics, retail, tutoring and more. English-friendly roles, flexible hours, updated daily.",
+  alternates: { canonical: "https://studentjobsamsterdam.nl/" },
   openGraph: {
-    title: "Student Jobs in Groningen (2026)",
+    title: "Student Jobs in Amsterdam (2026)",
     description:
-      "Part-time & English-friendly work for students in Groningen. Updated daily.",
-    url: "https://studentjobsgroningen.nl/",
-    siteName: "Student Jobs Groningen",
+      "Part-time & English-friendly work for students in Amsterdam. Updated daily.",
+    url: "https://studentjobsamsterdam.nl/",
+    siteName: "Student Jobs Amsterdam",
     type: "website",
     locale: "en_NL",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Student Jobs in Groningen (2026)",
+    title: "Student Jobs in Amsterdam (2026)",
     description:
-      "Part-time & English-friendly work for students in Groningen. Updated daily.",
+      "Part-time & English-friendly work for students in Amsterdam. Updated daily.",
   },
 };
 
@@ -75,27 +75,27 @@ export default function Page() {
 
   const blogPosts = [
     {
-      slug: "studenten-bijbaan-groningen",
+      slug: "studenten-bijbaan-amsterdam",
       title:
-        "Studenten bijbaan Groningen (2026) – Goed betaald, Engelstalig & weekend",
+        "Studenten bijbaan Amsterdam (2026) – Goed betaald, Engelstalig & weekend",
       excerpt:
-        "De ultieme gids voor een studenten bijbaan in Groningen: avond/weekend, Engelstalig, zonder ervaring. Uurloon-tabellen, contractvormen, wijken en snelle filters.",
+        "De ultieme gids voor een studenten bijbaan in Amsterdam: avond/weekend, Engelstalig, zonder ervaring. Uurloon-tabellen, contractvormen, wijken en snelle filters.",
     },
     {
-      slug: "student-jobs-groningen-complete-guide-2026",
-      title: "Student Jobs in Groningen — Complete Guide (2026)",
+      slug: "student-jobs-amsterdam-complete-guide-2026",
+      title: "Student Jobs in Amsterdam — Complete Guide (2026)",
       excerpt:
         "Permits, contracts, pay, neighborhoods, and tactics to land a job fast.",
     },
     {
-      slug: "english-speaking-student-jobs-groningen",
-      title: "English-Speaking Student Jobs in Groningen (2026)",
+      slug: "english-speaking-student-jobs-amsterdam",
+      title: "English-Speaking Student Jobs in Amsterdam (2026)",
       excerpt:
         "Where to find roles that don’t require Dutch, with quick-apply tips.",
     },
     {
-      slug: "best-paying-student-jobs-groningen-2026",
-      title: "Best-Paying Student Jobs in Groningen (2026)",
+      slug: "best-paying-student-jobs-amsterdam-2026",
+      title: "Best-Paying Student Jobs in Amsterdam (2026)",
       excerpt:
         "Shift bonuses, industries, and certifications that increase pay.",
     },
@@ -103,7 +103,7 @@ export default function Page() {
 
   const faqs = [
     {
-      q: "Can non-EU students work in Groningen?",
+      q: "Can non-EU students work in Amsterdam?",
       a: "Yes, but typically up to 16 hours/week during the academic year (or full-time in summer) with the correct permit. Always confirm the latest rules with your employer.",
     },
     {
@@ -125,12 +125,12 @@ export default function Page() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            name: "Student Jobs Groningen",
-            url: "https://studentjobsgroningen.nl/",
+            name: "Student Jobs Amsterdam",
+            url: "https://studentjobsamsterdam.nl/",
             potentialAction: {
               "@type": "SearchAction",
               target:
-                "https://studentjobsgroningen.nl/jobs?q={search_term_string}",
+                "https://studentjobsamsterdam.nl/jobs?q={search_term_string}",
               "query-input": "required name=search_term_string",
             },
           }),
@@ -143,15 +143,15 @@ export default function Page() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            name: "Student Jobs Groningen",
-            url: "https://studentjobsgroningen.nl/",
+            name: "Student Jobs Amsterdam",
+            url: "https://studentjobsamsterdam.nl/",
             sameAs: [],
             areaServed: {
               "@type": "City",
-              name: "Groningen",
+              name: "Amsterdam",
               address: {
                 "@type": "PostalAddress",
-                addressLocality: "Groningen",
+                addressLocality: "Amsterdam",
                 addressCountry: "NL",
               },
             },
@@ -170,7 +170,7 @@ export default function Page() {
               position: index + 1,
               url: job.externalUrl
                 ? job.externalUrl
-                : `https://studentjobsgroningen.nl/jobs/${job.slug}`,
+                : `https://studentjobsamsterdam.nl/jobs/${job.slug}`,
               name: job.title,
             })),
           }),
@@ -181,8 +181,8 @@ export default function Page() {
       <section className="relative min-h-[620px] md:min-h-[560px] lg:min-h-[600px]">
         {/* Banner image */}
         <Image
-          src="/groningen.jpg"
-          alt="Groningen skyline near the Erasmus Bridge"
+          src="/Amsterdam.jpg"
+          alt="Amsterdam skyline near the Erasmus Bridge"
           fill
           priority
           sizes="100vw"
@@ -198,7 +198,7 @@ export default function Page() {
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h1 className="text-3xl md:text-5xl font-semibold text-white">
-                  Student Jobs in Groningen (2026)
+                  Student Jobs in Amsterdam (2026)
                 </h1>
                 <p className="mt-3 text-base md:text-xl text-white/90 max-w-2xl">
                   Part-time & English-friendly roles. Flexible hours. Updated daily.
@@ -237,8 +237,8 @@ export default function Page() {
           {/* Keep hero image behind content */}
           <div className="pointer-events-none absolute inset-0 -z-10">
             <Image
-              src="/groningen.jpg"
-              alt="Groningen skyline near the Erasmus Bridge"
+              src="/Amsterdam.jpg"
+              alt="Amsterdam skyline near the Erasmus Bridge"
               fill
               priority
               sizes="100vw"
@@ -322,7 +322,7 @@ export default function Page() {
         <div className="mx-auto max-w-6xl grid gap-8 md:grid-cols-2">
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold">
-              Why Groningen works for students
+              Why Amsterdam works for students
             </h2>
             <ul className="mt-4 space-y-3 text-gray-700">
               <li>• Strong demand in hospitality around the city center/Markthal.</li>
@@ -371,7 +371,7 @@ export default function Page() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="text-2xl md:text-3xl font-semibold">
-                Are you a business? Hire students in Groningen
+                Are you a business? Hire students in Amsterdam
               </h2>
               <ul className="mt-4 space-y-2 text-gray-700">
                 <li>• City-specific audience of active student job-seekers</li>
@@ -393,7 +393,7 @@ export default function Page() {
               <h3 className="font-semibold">What you get</h3>
               <p className="mt-2 text-gray-700">
                 Featured placement on the homepage, priority in relevant
-                categories, and targeted candidates via our Groningen-only list.
+                categories, and targeted candidates via our Amsterdam-only list.
                 We review every role before it goes live.
               </p>
             </div>
@@ -427,7 +427,7 @@ export default function Page() {
       <section className="px-6 py-12">
         <div className="mx-auto max-w-3xl rounded-2xl border p-6 md:p-10">
           <h2 className="text-2xl md:text-3xl font-semibold">
-            Get weekly student jobs in your inbox (Groningen)
+            Get weekly student jobs in your inbox (Amsterdam)
           </h2>
           <p className="mt-2 text-gray-700">
             One email per week. No spam. Unsubscribe anytime.
@@ -450,7 +450,7 @@ export default function Page() {
               className="border rounded-xl px-4 py-3"
               required
             />
-            <input type="hidden" name="city" value="groningen" />
+            <input type="hidden" name="city" value="Amsterdam" />
             <button
               className="rounded-xl px-4 py-3 border bg-black text-white"
               type="submit"
@@ -519,7 +519,7 @@ export default function Page() {
             <div>
               <h2 className="text-lg md:text-xl font-semibold">Our partners</h2>
               <p className="text-sm text-gray-700 mt-1">
-                We collaborate with SEO, community, and hiring partners in Groningen.
+                We collaborate with SEO, community, and hiring partners in Amsterdam.
               </p>
             </div>
             <Link

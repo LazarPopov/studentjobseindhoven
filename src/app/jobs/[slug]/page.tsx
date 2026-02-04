@@ -5,9 +5,9 @@ import { listJobs } from "@/data/jobs";
 
 // SEO for the index page (unchanged)
 export const metadata = {
-  title: "Jobs in Groningen | Student Jobs Groningen",
-  description: "All current student jobs in Groningen.",
-  alternates: { canonical: "https://studentjobsgroningen.nl/jobs" },
+  title: "Jobs in Amsterdam | Student Jobs Amsterdam",
+  description: "All current student jobs in Amsterdam.",
+  alternates: { canonical: "https://studentjobsamsterdam.nl/jobs" },
 };
 
 // --- NEW: minimal JSON-LD for the listing page to help Google understand it’s a jobs list ---
@@ -65,7 +65,7 @@ function RowLink({
 
 export default function JobsIndex() {
   const jobs = listJobs();
-  const baseUrl = "https://studentjobsgroningen.nl";
+  const baseUrl = "https://studentjobsAmsterdam.nl";
 
   return (
     <section className="px-6 py-10">
@@ -76,7 +76,7 @@ export default function JobsIndex() {
       />
 
       <div className="mx-auto max-w-5xl">
-        <h1 className="text-3xl md:text-4xl font-semibold">All Jobs in Groningen</h1>
+        <h1 className="text-3xl md:text-4xl font-semibold">All Jobs in Amsterdam</h1>
 
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {jobs.map((j) => (

@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: { category: string 
   return {
     title: `${label} Jobs in Rotterdam | Student Jobs Rotterdam`,
     description: `Browse ${label.toLowerCase()} jobs in Rotterdam.`,
-    alternates: { canonical: `https://studentjobsgroningen.nl/categories/${key}` },
+    alternates: { canonical: `https://studentjobsAmsterdam.nl/categories/${key}` },
   };
 }
 

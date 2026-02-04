@@ -4,9 +4,9 @@ import Link from "next/link";
 import { listJobs, listFeaturedJobs } from "@/data/jobs";
 
 export const metadata = {
-  title: "Jobs in Groningen | Student Jobs Groningen",
-  description: "All current student jobs in Groningen.",
-  alternates: { canonical: "https://studentjobsgroningen.nl/jobs/${params.slug}" },
+  title: "Jobs in Amsterdam | Student Jobs Amsterdam",
+  description: "All current student jobs in Amsterdam.",
+  alternates: { canonical: "https://studentjobsamsterdam.nl/jobs/${params.slug}" },
 };
 
 type Search = { q?: string | string[]; category?: string | string[]; english?: string | string[] };
@@ -61,7 +61,7 @@ export default function JobsIndex({ searchParams }: { searchParams: Search }) {
       <div className="mx-auto max-w-5xl">
         {/* Top bar with Return and (optional) Clear filters */}
         <div className="flex items-center justify-between">
-          <h1 className="text-3xl md:text-4xl font-semibold">All Jobs in Groningen</h1>
+          <h1 className="text-3xl md:text-4xl font-semibold">All Jobs in Amsterdam</h1>
           <div className="flex gap-2">
             <Link href="/" className="btn btn-ghost">← Return</Link>
             {hasFilters && (

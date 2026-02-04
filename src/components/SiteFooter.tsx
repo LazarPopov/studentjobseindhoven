@@ -9,9 +9,9 @@ export default function SiteFooter() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Brand */}
         <div>
-          <div className="text-lg sm:text-xl font-semibold">Student Jobs Groningen</div>
+          <div className="text-lg sm:text-xl font-semibold">Student Jobs Amsterdam</div>
           <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-            Local guides and listings for students in Groningen. English-friendly roles, fast apply tips, and real pay ranges.
+            Local guides and listings for students in Amsterdam. English-friendly roles, fast apply tips, and real pay ranges.
           </p>
         </div>
 
@@ -33,17 +33,17 @@ export default function SiteFooter() {
           <div className="font-semibold">Popular reads</div>
           <ul className="mt-3 space-y-2 text-sm">
             <li>
-              <Link href="/blog/english-speaking-student-jobs-groningen" className="underline underline-offset-2">
+              <Link href="/blog/english-speaking-student-jobs-Amsterdam" className="underline underline-offset-2">
                 English-Speaking Student Jobs (2026)
               </Link>
             </li>
             <li>
-              <Link href="/blog/best-paying-student-jobs-groningen-2026" className="underline underline-offset-2">
+              <Link href="/blog/best-paying-student-jobs-Amsterdam-2026" className="underline underline-offset-2">
                 Best-Paying Student Jobs (2026)
               </Link>
             </li>
             <li>
-              <Link href="/blog/student-jobs-groningen-complete-guide-2026" className="underline underline-offset-2">
+              <Link href="/blog/student-jobs-Amsterdam-complete-guide-2026" className="underline underline-offset-2">
                 Complete Guide (2026)
               </Link>
             </li>
@@ -70,7 +70,7 @@ export default function SiteFooter() {
               aria-label="Your email"
               required
             />
-            <input type="hidden" name="city" value="groningen" />
+            <input type="hidden" name="city" value="Amsterdam" />
             <button
               className="w-full sm:w-auto rounded-xl px-4 py-3 border bg-black text-white text-sm"
               type="submit"
@@ -84,7 +84,7 @@ export default function SiteFooter() {
       {/* Bottom bar */}
       <div className="bg-white border-t">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs text-slate-500">
-          <div>© {year} Student Jobs Groningen. All rights reserved.</div>
+          <div>© {year} Student Jobs Amsterdam. All rights reserved.</div>
           <div className="flex flex-wrap items-center gap-4">
             <Link href="/privacy" className="underline underline-offset-2">Privacy</Link>
             <Link href="/terms" className="underline underline-offset-2">Terms</Link>

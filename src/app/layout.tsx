@@ -7,9 +7,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Student Jobs Groningen",
+  title: "Student Jobs Amsterdam",
   description:
-    "Find student jobs in Groningen — English-friendly roles, fast apply tips, and real pay ranges.",
+    "Find student jobs in Amsterdam — English-friendly roles, fast apply tips, and real pay ranges.",
   // keeps the account meta for site verification
   other: {
     "google-adsense-account": "ca-pub-6526366734536758",
@@ -72,7 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Plausible (optional) */}
         <Script
           defer
-          data-domain="studentjobsgroningen.nl"
+          data-domain="studentjobsamsterdam.nl"
           src="https://plausible.io/js/script.js"
         />
 

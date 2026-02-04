@@ -4,15 +4,15 @@ import Link from "next/link";
 import { listJobs, listFeaturedJobs } from "@/data/jobs";
 
 export const metadata: Metadata = {
-  title: "Browse Job Categories in Groningen | Student Jobs Rotterdam",
+  title: "Browse Job Categories in Amsterdam | Student Jobs Rotterdam",
   description:
     "Find student jobs in Rotterdam by category: hospitality, delivery, logistics, retail, tutoring, events, sales, and fieldwork. Mobile-friendly and SEO-optimized.",
-  alternates: { canonical: "https://studentjobsgroningen.nl/categories/${slug}" },
+  alternates: { canonical: "https://studentjobsAmsterdam.nl/categories/${slug}" },
   openGraph: {
     title: "Browse Job Categories in Rotterdam",
     description:
       "Explore student jobs in Rotterdam by category and discover English-friendly roles.",
-    url: "https://studentjobsgroningen.nl/categories",
+    url: "https://studentjobsAmsterdam.nl/categories",
     siteName: "Student Jobs Rotterdam",
     type: "website",
     locale: "en_NL",
@@ -97,7 +97,7 @@ export default function CategoriesIndexPage() {
                 "@type": "ListItem",
                 position: i + 1,
                 name: c.label,
-                url: `https://studentjobsgroningen.nl/categories/${c.key}`,
+                url: `https://studentjobsAmsterdam.nl/categories/${c.key}`,
               })),
             }),
           }}
