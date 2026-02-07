@@ -3,112 +3,152 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+const BASE_URL = "https://studentjobsamsterdam.nl";
+const SLUG = "best-paying-student-jobs-amsterdam-2026";
+
+// This file lives under /guides/, so canonical should match the real route.
+const CANONICAL = `${BASE_URL}/guides/${SLUG}`;
+
 const PUBLISH_DATE = "2026-01-02";
-const MODIFIED_DATE = "2026-01-02";
-const CANONICAL =
-  "https://studentjobsamsterdam.nl/blog/best-paying-student-jobs-amsterdam-2026";
+const MODIFIED_DATE = "2026-02-07";
 
-// Pick one of the images that exists in /public/blog/
-const HERO_IMAGE_PATH =
-  "/blog/erasmus-experience-in-amsterdam-netherlands-by-chloe1.jpg";
-
-// Use absolute URL for OG, Twitter, JSON-LD
-const OG_IMAGE_URL = `https://studentjobsamsterdam.nl${HERO_IMAGE_PATH}`;
+// Image exists in /public/blog/amsterdam-bridge.jpg
+const HERO_IMAGE_PATH = "/blog/amsterdam-bridge.jpg";
+const OG_IMAGE_URL = `${BASE_URL}${HERO_IMAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title:
-    "Best-Paying Student Jobs in Amsterdam (2026) - Shift Types, Industries & Certifications",
+  metadataBase: new URL(BASE_URL),
+  title: "Best Paying Student Jobs in Amsterdam (2026) | Student Jobs Amsterdam",
   description:
-    "Discover the best-paying student jobs in Amsterdam for 2026: evening/weekend shifts, logistics, tutoring, events lead roles, and certifications like BHV, HACCP, VCA, forklift.",
+    "Discover the best paying student jobs in Amsterdam in 2026. Compare high paying categories, shift bonuses, and quick certifications like BHV, HACCP, VCA, forklift, and barista.",
   keywords: [
     "best paying student jobs Amsterdam",
-    "high paying student jobs Amsterdam",
+    "highest paying student jobs Amsterdam",
     "student wage Amsterdam",
-    "BHV HACCP VCA forklift certificate",
-    "evening night weekend allowance Netherlands",
+    "student jobs Amsterdam pay",
+    "English speaking student jobs Amsterdam",
+    "evening weekend allowance Netherlands",
+    "BHV certificate",
+    "HACCP certificate",
+    "VCA certificate",
+    "forklift certificate Netherlands",
+    "barista course Amsterdam",
   ],
   alternates: { canonical: CANONICAL },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
-    title: "Best-Paying Student Jobs in Amsterdam (2026)",
+    title: "Best Paying Student Jobs in Amsterdam (2026)",
     description:
-      "Shift types, industries, and certifications that add money to your hourly rate with quick wins for students.",
+      "High paying categories, shift bonuses, and short certifications that can increase your hourly rate in Amsterdam.",
     url: CANONICAL,
     type: "article",
     locale: "en_NL",
     siteName: "Student Jobs Amsterdam",
     publishedTime: PUBLISH_DATE,
     modifiedTime: MODIFIED_DATE,
-    images: [{ url: OG_IMAGE_URL }],
+    images: [
+      {
+        url: OG_IMAGE_URL,
+        width: 1200,
+        height: 630,
+        alt: "Amsterdam bridge and canals",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best-Paying Student Jobs in Amsterdam (2026)",
+    title: "Best Paying Student Jobs in Amsterdam (2026)",
     description:
-      "Which student jobs pay the most in Amsterdam? Get tactics, categories, and certs to boost your rate fast.",
+      "Which student jobs pay the most in Amsterdam. Categories, allowances, and certifications that raise your hourly rate.",
     images: [OG_IMAGE_URL],
   },
-  robots: { index: true, follow: true },
 };
 
-export default function BestPayingGuide() {
+export default function BestPayingGuideAmsterdam() {
+  const updatedLabel = new Date(MODIFIED_DATE).toLocaleDateString("en-NL", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return (
     <section className="section">
       <div className="mx-auto max-w-6xl">
         {/* HEADER */}
         <header className="max-w-3xl">
           <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
-            Best-Paying Student Jobs in Amsterdam (2026)
+            Best Paying Student Jobs in Amsterdam (2026)
           </h1>
 
           <p className="mt-3 text-sm text-slate-600">
-            By <span className="font-medium">Student Jobs Amsterdam</span> •
-            Updated{" "}
-            {new Date(MODIFIED_DATE).toLocaleDateString("en-NL", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
+            By <span className="font-medium">Student Jobs Amsterdam</span> • Updated {updatedLabel}
           </p>
 
-          <div className="mt-5 overflow-hidden rounded-2xl border bg-white">
+          <figure className="mt-5 overflow-hidden rounded-2xl border bg-white">
             <Image
               src={HERO_IMAGE_PATH}
-              alt="Erasmus experience in Amsterdam"
+              alt="Amsterdam bridge and canals"
               width={1280}
               height={720}
               priority
               className="w-full h-auto object-cover"
             />
-          </div>
+            <figcaption className="px-4 py-3 text-xs text-slate-600">
+              Photo credit:{" "}
+              <a
+                href="https://www.amsterdamprivateboat.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                amsterdamprivateboat.com
+              </a>
+            </figcaption>
+          </figure>
         </header>
 
         {/* CONTENT + TOC */}
         <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_320px]">
-          {/* TOC (mobile first) */}
+          {/* TOC */}
           <nav
             aria-label="Table of contents"
-            className="order-1 lg:order-2 lg:sticky lg:top-24 h-max rounded-2xl border p-4 bg-slate-50 text-sm text-slate-700"
+            className="
+              order-1 lg:order-2
+              lg:sticky lg:top-24 h-max
+              rounded-2xl border p-4 bg-slate-50
+              text-sm text-slate-700
+            "
           >
             <div className="font-semibold">On this page</div>
             <ul className="mt-2 space-y-1">
               <li>
                 <a href="#top-categories" className="underline">
-                  Top-paying categories for students
+                  Top paying categories
                 </a>
               </li>
               <li>
                 <a href="#shift-bonuses" className="underline">
-                  Shift bonuses that boost pay
+                  Shift bonuses and allowances
                 </a>
               </li>
               <li>
                 <a href="#certifications" className="underline">
-                  Certifications that add money
+                  Certifications that increase pay
                 </a>
               </li>
               <li>
                 <a href="#quick-wins" className="underline">
-                  Quick wins to raise your rate
+                  Quick wins
                 </a>
               </li>
               <li>
@@ -118,7 +158,7 @@ export default function BestPayingGuide() {
               </li>
               <li>
                 <a href="#apply-now" className="underline">
-                  Apply now (high-paying filters)
+                  Apply now
                 </a>
               </li>
               <li>
@@ -130,126 +170,140 @@ export default function BestPayingGuide() {
           </nav>
 
           {/* ARTICLE */}
-          <article className="order-2 lg:order-1 max-w-3xl space-y-6 leading-relaxed text-slate-800 [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-semibold [&_h3]:mt-6 [&_h3]:text-xl [&_h3]:font-semibold [&_p]:mt-3 [&_ul]:mt-3 [&_ol]:mt-3 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_a]:underline [&_a]:text-brand-700 hover:[&_a]:text-brand-600">
-            <h2 id="top-categories">Top-paying categories for students</h2>
+          <article
+            className="
+              order-2 lg:order-1
+              max-w-3xl
+              space-y-6
+              leading-relaxed text-slate-800
+              [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-semibold
+              [&_h3]:mt-6  [&_h3]:text-xl  [&_h3]:font-semibold
+              [&_p]:mt-3   [&_ul]:mt-3   [&_ol]:mt-3
+              [&_ul]:list-disc [&_ul]:pl-6
+              [&_ol]:list-decimal [&_ol]:pl-6
+              [&_a]:underline [&_a]:text-brand-700 hover:[&_a]:text-brand-600
+            "
+          >
             <p>
-              Actual wages vary by age and experience, but these categories often
-              pay at the higher end for students:
+              If you want a higher hourly rate in Amsterdam, focus on two levers: role type (category) and premium
+              shifts. Then add one short certification that unlocks better duties. This guide shows the most common
+              paths that increase pay for students in 2026.
+            </p>
+
+            <h2 id="top-categories">Top paying categories</h2>
+            <p>
+              Pay varies by age, contract, and experience, but these categories often sit at the higher end for student
+              roles in Amsterdam:
             </p>
 
             <ul>
               <li>
-                <strong>Tutoring / Teaching Assistants</strong> subject tutors
-                and uni assistant roles can pay well thanks to specialized
-                skills. Start here: <Link href="/categories/tutoring">Tutoring jobs</Link>.
+                <strong>Tutoring and teaching assistant roles</strong>: high pay because you bring a specific skill. See{" "}
+                <Link href="/categories/tutoring">tutoring jobs</Link>.
               </li>
               <li>
-                <strong>Logistics & Port-Adjacent Roles</strong> evening/late
-                shifts and physical roles can add allowances. See{" "}
-                <Link href="/categories/delivery">Delivery</Link> and{" "}
-                <Link href="/categories/fieldwork">Fieldwork</Link>.
+                <strong>Logistics and warehouse shifts</strong>: evening or weekend shifts often come with premiums. See{" "}
+                <Link href="/categories/logistics">logistics</Link> and{" "}
+                <Link href="/categories/delivery">delivery</Link>.
               </li>
               <li>
-                <strong>Events (Lead / Team Lead)</strong> staff with
-                responsibility earn more than entry-level crew. Browse{" "}
-                <Link href="/categories/events">Events</Link>.
+                <strong>Events team lead</strong>: lead or supervisor shifts tend to pay more than entry crew. Browse{" "}
+                <Link href="/categories/events">events</Link>.
               </li>
               <li>
-                <strong>Sales with Commission</strong> base + bonuses
-                (door-to-door, call/chat, retail add-ons). Check{" "}
-                <Link href="/categories/sales">Sales</Link>.
+                <strong>Sales with commission</strong>: base pay plus bonuses if you perform. Check{" "}
+                <Link href="/categories/sales">sales</Link>.
               </li>
               <li>
-                <strong>Hospitality (Skilled)</strong> barista or shift lead
-                roles usually pay more than runner/host. Explore{" "}
-                <Link href="/categories/hospitality">Hospitality</Link>.
+                <strong>Skilled hospitality</strong>: barista, closing shift, and shift lead roles usually pay more than
+                runner roles. Explore <Link href="/categories/hospitality">hospitality</Link>.
               </li>
             </ul>
 
-            <h2 id="shift-bonuses">Shift bonuses that boost pay</h2>
-            <p>You can increase your net hourly rate just by choosing the right schedule:</p>
+            <h2 id="shift-bonuses">Shift bonuses and allowances</h2>
+            <p>You can increase your effective hourly rate by choosing the right schedule and contract:</p>
             <ul>
               <li>
-                <strong>Evening / Night / Weekend allowances</strong> common in
-                logistics, warehouses, events, hospitality. Check listings for
-                exact percentages or fixed premiums.
+                <strong>Evening, night, and weekend premiums</strong>: common in logistics, events, hospitality, and some
+                delivery roles.
               </li>
               <li>
-                <strong>Holiday pay (8%)</strong> often paid monthly or annually
-                on top of the hourly rate.
+                <strong>Holiday pay</strong> (often 8 percent): sometimes paid monthly, sometimes yearly.
               </li>
               <li>
-                <strong>Travel reimbursements</strong> matters if you commute to
-                Waalhaven/Port or event sites.
+                <strong>Travel reimbursements</strong>: useful if you commute to Westpoort, Sloterdijk, Schiphol area, or
+                larger venues.
               </li>
             </ul>
 
-            <h2 id="certifications">Certifications that add money</h2>
-            <p>Short, affordable certificates can move you from entry-level to higher-paid shifts:</p>
+            <h2 id="certifications">Certifications that increase pay</h2>
+            <p>Short, practical certificates can move you from entry shifts to higher responsibility shifts:</p>
             <ul>
               <li>
-                <strong>BHV</strong> (bedrijfshulpverlening / first aid + emergency response) useful in events/hospitality.
+                <strong>BHV</strong>: emergency response, useful for events and hospitality teams.
               </li>
               <li>
-                <strong>HACCP</strong> food safety; increases trust for café/restaurant/kitchen roles.
+                <strong>HACCP</strong>: food safety, useful for café, kitchen, and catering roles.
               </li>
               <li>
-                <strong>VCA</strong> safety standard often requested for fieldwork/logistics/event build-up.
+                <strong>VCA</strong>: safety certificate, common for fieldwork, build up, and some logistics roles.
               </li>
               <li>
-                <strong>Forklift (heftruck)</strong> relevant for warehouses; tends to unlock higher-paying slots.
+                <strong>Forklift</strong> (heftruck): unlocks warehouse roles that often pay better.
               </li>
               <li>
-                <strong>Barista training</strong> moves you up the hospitality ladder quickly.
+                <strong>Barista training</strong>: a fast upgrade in hospitality.
               </li>
             </ul>
 
             <p className="text-sm text-slate-600">
-              Tip: ask employers if they’ll sponsor or reimburse certifications after a probation period.
+              Tip: ask if the employer reimburses certifications after a probation period.
             </p>
 
-            <h2 id="quick-wins">Quick wins to raise your rate</h2>
+            <h2 id="quick-wins">Quick wins</h2>
             <ul>
               <li>
-                <strong>Target evening/weekend shifts</strong> in logistics or events for allowances.
+                <strong>Target premium shifts</strong> in logistics, events, and hospitality.
               </li>
               <li>
-                <strong>Pitch availability upfront</strong> (reliability equals better shifts). Use our template in applications.
+                <strong>Pitch availability clearly</strong>: reliable availability often leads to better shifts.
               </li>
               <li>
-                <strong>List neighborhoods</strong> you can reach fast (Centrum, Kralingen, Zuidplein, Waalhaven).
+                <strong>State travel radius</strong>: for example Centrum, De Pijp, Oud West, Zuidas, Noord, Sloterdijk.
               </li>
               <li>
-                <strong>Upgrade one skill</strong> in 1 to 2 weeks (barista, BHV, VCA) and ask for lead or premium shifts.
+                <strong>Upgrade one skill fast</strong>: BHV, VCA, forklift, or barista, then ask for better duties.
               </li>
               <li>
-                <strong>Add English + basic Dutch</strong> on your CV (A2) it unlocks more roles and duties.
+                <strong>Add English and basic Dutch</strong> (A2) on your CV to unlock more roles.
               </li>
             </ul>
 
             <h2 id="example-paths">Example upgrade paths</h2>
             <ol>
               <li>
-                <strong>Hospitality runner to Barista to Shift lead</strong>: take a weekend barista course, then ask to be scheduled on machine + close shifts (usually higher pay).
+                <strong>Hospitality runner to barista to shift lead</strong>: take a short barista course, then ask for
+                closing or machine shifts.
               </li>
               <li>
-                <strong>Warehouse picker to Forklift-certified</strong>: get a short forklift course and move to higher-paying stations.
+                <strong>Warehouse picker to forklift certified</strong>: do a forklift course and move to better paid
+                stations.
               </li>
               <li>
-                <strong>Event crew to Team lead</strong>: do BHV and volunteer to brief teams; leads typically earn more.
+                <strong>Event crew to team lead</strong>: get BHV and volunteer to brief teams.
               </li>
               <li>
-                <strong>Good grades to Tutor</strong>: start with general tutoring, then specialize (math, programming, languages) for higher rates.
+                <strong>Strong grades to tutor</strong>: specialize in math, programming, or languages for higher rates.
               </li>
             </ol>
 
-            <h2 id="apply-now">Apply now (high-paying filters)</h2>
+            <h2 id="apply-now">Apply now</h2>
             <div className="rounded-2xl border p-5 bg-white">
               <div className="font-semibold text-lg">Ready to earn more?</div>
               <p className="mt-1">
                 Start here: <Link href="/jobs">see all jobs</Link>,{" "}
-                <Link href="/jobs?english=true">English-friendly only</Link>, and browse{" "}
-                <Link href="/categories">categories</Link>. If you’re an employer,{" "}
+                <Link href="/jobs?english=true">English friendly only</Link>, and browse{" "}
+                <Link href="/categories">categories</Link>. If you are an employer,{" "}
                 <Link href="/employers">feature your job</Link>.
               </p>
             </div>
@@ -258,19 +312,19 @@ export default function BestPayingGuide() {
 
             <h3>Which student jobs pay the most in Amsterdam?</h3>
             <p>
-              Often tutoring, logistics evening/night shifts, event leads, and sales with commission.
-              Skilled hospitality (barista/lead) also earns more than entry roles.
+              Often tutoring, logistics shifts with premiums, event lead roles, and sales with commission. Skilled
+              hospitality roles like barista or shift lead can also pay above entry level.
             </p>
 
             <h3>How can I quickly increase my hourly rate?</h3>
             <p>
-              Target shifts with allowances, get a short certificate (BHV, VCA, forklift, barista),
-              and ask for duties with responsibility (team lead, machine operator, keyholder).
+              Choose premium shifts, get one short certificate such as BHV, VCA, forklift, or barista training, then ask
+              for higher responsibility duties like team lead or machine operator.
             </p>
 
             <h3>Do certifications really matter?</h3>
             <p>
-              Yes. They signal safety and responsibility, letting managers schedule you on better-paid tasks/shifts.
+              Yes. They signal safety and reliability, and that often unlocks better tasks and higher paid shifts.
             </p>
           </article>
         </div>
@@ -282,20 +336,25 @@ export default function BestPayingGuide() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Article",
-              headline:
-                "Best-Paying Student Jobs in Amsterdam (2026) - Shift Types, Industries & Certifications",
+              headline: "Best Paying Student Jobs in Amsterdam (2026)",
               description:
-                "Shift types, industries, and certifications that add money to your hourly rate as a student in Amsterdam.",
-              image: OG_IMAGE_URL,
+                "High paying categories, shift bonuses, and certifications that can increase your hourly rate as a student in Amsterdam.",
+              image: [OG_IMAGE_URL],
               datePublished: PUBLISH_DATE,
               dateModified: MODIFIED_DATE,
+              inLanguage: "en-NL",
               author: {
                 "@type": "Organization",
                 name: "Student Jobs Amsterdam",
-                url: "https://studentjobsamsterdam.nl/",
+                url: `${BASE_URL}/`,
               },
-              publisher: { "@type": "Organization", name: "Student Jobs Amsterdam" },
+              publisher: {
+                "@type": "Organization",
+                name: "Student Jobs Amsterdam",
+                url: `${BASE_URL}/`,
+              },
               mainEntityOfPage: { "@type": "WebPage", "@id": CANONICAL },
+              about: [{ "@type": "Place", name: "Amsterdam" }],
             }),
           }}
         />
@@ -307,18 +366,8 @@ export default function BestPayingGuide() {
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Guides",
-                  item: "https://studentjobsamsterdam.nl/blogs",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "Best-Paying Student Jobs in Amsterdam (2026)",
-                  item: CANONICAL,
-                },
+                { "@type": "ListItem", position: 1, name: "Guides", item: `${BASE_URL}/guides` },
+                { "@type": "ListItem", position: 2, name: "Best Paying Student Jobs in Amsterdam (2026)", item: CANONICAL },
               ],
             }),
           }}
@@ -336,7 +385,8 @@ export default function BestPayingGuide() {
                   name: "Which student jobs pay the most in Amsterdam?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Tutoring, logistics evening/night shifts, event leads, and sales with commission. Skilled hospitality (barista/lead) also pays above entry level.",
+                    text:
+                      "Often tutoring, logistics shifts with premiums, event lead roles, and sales with commission. Skilled hospitality roles like barista or shift lead can also pay above entry level.",
                   },
                 },
                 {
@@ -344,7 +394,8 @@ export default function BestPayingGuide() {
                   name: "How can I quickly increase my hourly rate?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Target shifts with allowances, obtain short certifications (BHV, VCA, forklift, barista), and ask for higher-responsibility duties like team lead.",
+                    text:
+                      "Choose premium shifts, get one short certificate such as BHV, VCA, forklift, or barista training, then ask for higher responsibility duties like team lead or machine operator.",
                   },
                 },
                 {
@@ -352,7 +403,8 @@ export default function BestPayingGuide() {
                   name: "Do certifications really matter?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Yes, certifications signal safety and responsibility, enabling managers to assign higher-paying tasks and shifts.",
+                    text:
+                      "Yes. Certifications signal safety and reliability and often unlock better tasks and higher paid shifts.",
                   },
                 },
               ],
@@ -367,28 +419,32 @@ export default function BestPayingGuide() {
               "@context": "https://schema.org",
               "@type": "HowTo",
               name: "How to boost your student wage in Amsterdam in 2 weeks",
-              image: OG_IMAGE_URL,
+              image: [OG_IMAGE_URL],
               totalTime: "P14D",
+              inLanguage: "en-NL",
               supply: [
-                { "@type": "HowToSupply", name: "1-page CV (PDF)" },
-                { "@type": "HowToSupply", name: "BHV or VCA short course" },
-                { "@type": "HowToSupply", name: "Availability plan (evenings/weekends)" },
+                { "@type": "HowToSupply", name: "One page CV (PDF)" },
+                { "@type": "HowToSupply", name: "One short course (BHV, VCA, forklift, or barista)" },
+                { "@type": "HowToSupply", name: "Availability plan (evenings and weekends)" },
               ],
               step: [
                 {
                   "@type": "HowToStep",
-                  name: "Pick a higher-paying category",
-                  text: "Choose logistics evening shifts, tutoring, events lead, or sales with commission based on your strengths.",
+                  name: "Pick a higher paying category",
+                  text:
+                    "Choose tutoring, logistics shifts with premiums, events lead roles, or sales with commission based on your strengths.",
                 },
                 {
                   "@type": "HowToStep",
                   name: "Get a quick certification",
-                  text: "Complete BHV, VCA, forklift, or barista training to unlock premium shifts and responsibilities.",
+                  text:
+                    "Complete BHV, VCA, forklift, or barista training to unlock better duties and higher paid shifts.",
                 },
                 {
                   "@type": "HowToStep",
                   name: "Apply with targeted availability",
-                  text: "Submit applications before 10:00, highlight evening/weekend availability, and follow up the same day.",
+                  text:
+                    "Apply early, state your premium shift availability clearly, and follow up the same day.",
                 },
               ],
             }),

@@ -3,53 +3,75 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+const BASE_URL = "https://studentjobsamsterdam.nl";
+
 const PUBLISH_DATE = "2026-10-02";
-const MODIFIED_DATE = "2026-10-02";
-const CANONICAL =
-  "https://studentjobsamsterdam.nl/blog/student-jobs-amsterdam-complete-guide-2026";
+const MODIFIED_DATE = "2026-02-07";
 
-// Use chloe2 from /public/blog/
-const HERO_IMAGE_PATH =
-  "/blog/erasmus-experience-in-amsterdam-netherlands-by-chloe2.jpg";
+const CANONICAL = `${BASE_URL}/blog/student-jobs-amsterdam-complete-guide-2026`;
 
-// Absolute URL for OG/Twitter/JSON-LD
-const OG_IMAGE_URL = `https://studentjobsamsterdam.nl${HERO_IMAGE_PATH}`;
+// Use the local image you mentioned (in /public/blog/)
+const HERO_IMAGE_PATH = "/blog/amsterdam-bridge.jpg";
+const OG_IMAGE_URL = `${BASE_URL}${HERO_IMAGE_PATH}`;
 
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title:
-    "Student Jobs in Amsterdam — Complete Guide (2026): Visas, Contracts, Wages, Neighborhoods",
+    "Student Jobs in Amsterdam (2026) | Complete Guide: English Friendly, Pay, Contracts, Visas",
   description:
-    "A complete, practical guide for student jobs in Amsterdam: permits, contracts, pay, neighborhoods, CV templates, and where to find English-speaking roles fast.",
+    "Complete guide to student jobs in Amsterdam for 2026. English friendly roles, pay ranges, contracts, permits, neighborhoods, CV templates, and where to apply fast.",
   keywords: [
     "student jobs Amsterdam",
-    "English speaking jobs Amsterdam",
+    "student jobs in Amsterdam",
+    "English speaking student jobs Amsterdam",
+    "part time jobs Amsterdam students",
     "student visa work Netherlands",
-    "part-time jobs Amsterdam students",
-    "Amsterdam wages students",
+    "Amsterdam student wage",
+    "work permit student Netherlands",
+    "weekend jobs Amsterdam students",
+    "evening jobs Amsterdam students",
+    "tutoring jobs Amsterdam",
+    "hospitality jobs Amsterdam students",
+    "warehouse jobs Amsterdam students",
   ],
   alternates: { canonical: CANONICAL },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
-    title:
-      "Student Jobs in Amsterdam — Complete Guide (2026): Visas, Contracts, Wages, Neighborhoods",
+    title: "Student Jobs in Amsterdam (2026): Complete Guide",
     description:
-      "Permits, contracts, pay ranges, neighborhoods, and step-by-step tactics to land a student job in Amsterdam.",
+      "Permits, contracts, pay ranges, neighborhoods, and step by step tactics to land a student job in Amsterdam fast.",
     url: CANONICAL,
     type: "article",
     locale: "en_NL",
     siteName: "Student Jobs Amsterdam",
     publishedTime: PUBLISH_DATE,
     modifiedTime: MODIFIED_DATE,
-    images: [{ url: OG_IMAGE_URL }],
+    images: [
+      {
+        url: OG_IMAGE_URL,
+        width: 1200,
+        height: 630,
+        alt: "Amsterdam bridge and canals",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Student Jobs in Amsterdam — Complete Guide (2026): Visas, Contracts, Wages, Neighborhoods",
+    title: "Student Jobs in Amsterdam (2026): Complete Guide",
     description:
-      "Everything you need to start working in Amsterdam as a student — fast and legally.",
+      "English friendly roles, pay ranges, contracts, permits, and where to apply fast in Amsterdam.",
     images: [OG_IMAGE_URL],
   },
-  robots: { index: true, follow: true },
 };
 
 export default function GuideComplete() {
@@ -59,11 +81,11 @@ export default function GuideComplete() {
         {/* HEADER */}
         <header className="max-w-3xl">
           <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
-            Student Jobs in Amsterdam — Complete Guide (2026)
+            Student Jobs in Amsterdam: complete guide (2026)
           </h1>
+
           <p className="mt-3 text-sm text-slate-600">
-            By <span className="font-medium">Student Jobs Amsterdam</span> •
-            Updated{" "}
+            By <span className="font-medium">Student Jobs Amsterdam</span> • Updated{" "}
             {new Date(MODIFIED_DATE).toLocaleDateString("en-NL", {
               year: "numeric",
               month: "long",
@@ -71,21 +93,51 @@ export default function GuideComplete() {
             })}
           </p>
 
-          <div className="mt-5 overflow-hidden rounded-2xl border bg-white">
+          <figure className="mt-5 overflow-hidden rounded-2xl border bg-white">
             <Image
               src={HERO_IMAGE_PATH}
-              alt="Erasmus experience in Amsterdam"
+              alt="Amsterdam bridge and canals"
               width={1280}
               height={720}
               priority
               className="w-full h-auto object-cover"
             />
+            <figcaption className="px-4 py-3 text-xs text-slate-600">
+              Photo credit:{" "}
+              <a
+                href="https://www.amsterdamprivateboat.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                amsterdamprivateboat.com
+              </a>
+            </figcaption>
+          </figure>
+
+          {/* Quick CTAs */}
+          <div className="mt-6 flex flex-wrap gap-2">
+            <Link href="/jobs?city=Amsterdam" className="rounded-full border px-3 py-1 text-sm underline">
+              All Amsterdam jobs
+            </Link>
+            <Link href="/jobs?city=Amsterdam&english=true" className="rounded-full border px-3 py-1 text-sm underline">
+              English friendly
+            </Link>
+            <Link href="/jobs?city=Amsterdam&weekend=true" className="rounded-full border px-3 py-1 text-sm underline">
+              Weekend shifts
+            </Link>
+            <Link href="/jobs?city=Amsterdam&evening=true" className="rounded-full border px-3 py-1 text-sm underline">
+              Evening shifts
+            </Link>
+            <Link href="/part-time-jobs-amsterdam-students" className="rounded-full border px-3 py-1 text-sm underline">
+              Part time jobs page
+            </Link>
           </div>
         </header>
 
         {/* CONTENT + TOC */}
         <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_320px]">
-          {/* TOC (mobile first) */}
+          {/* TOC */}
           <nav
             aria-label="Table of contents"
             className="
@@ -97,56 +149,16 @@ export default function GuideComplete() {
           >
             <div className="font-semibold">On this page</div>
             <ul className="mt-2 space-y-1">
-              <li>
-                <a href="#quickstart" className="underline">
-                  Quick-start checklist
-                </a>
-              </li>
-              <li>
-                <a href="#permits" className="underline">
-                  Work permits & hours
-                </a>
-              </li>
-              <li>
-                <a href="#contracts-pay" className="underline">
-                  Contracts, pay & allowances
-                </a>
-              </li>
-              <li>
-                <a href="#neighborhoods" className="underline">
-                  Neighborhoods & commute tips
-                </a>
-              </li>
-              <li>
-                <a href="#categories" className="underline">
-                  Best categories for students
-                </a>
-              </li>
-              <li>
-                <a href="#where-to-look" className="underline">
-                  Where to find jobs (fast)
-                </a>
-              </li>
-              <li>
-                <a href="#cv-templates" className="underline">
-                  CV & message templates
-                </a>
-              </li>
-              <li>
-                <a href="#schedule" className="underline">
-                  Weekly schedule that works with classes
-                </a>
-              </li>
-              <li>
-                <a href="#tax-bsn" className="underline">
-                  BSN, bank, taxes & payslips
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="underline">
-                  FAQ
-                </a>
-              </li>
+              <li><a href="#quickstart" className="underline">Quick start checklist</a></li>
+              <li><a href="#permits" className="underline">Work permits and hours</a></li>
+              <li><a href="#contracts-pay" className="underline">Contracts, pay, allowances</a></li>
+              <li><a href="#neighborhoods" className="underline">Neighborhoods and commute tips</a></li>
+              <li><a href="#categories" className="underline">Best student job categories</a></li>
+              <li><a href="#where-to-look" className="underline">Where to find jobs fast</a></li>
+              <li><a href="#cv-templates" className="underline">CV and message templates</a></li>
+              <li><a href="#schedule" className="underline">Schedule that fits classes</a></li>
+              <li><a href="#tax-bsn" className="underline">BSN, bank, taxes, payslips</a></li>
+              <li><a href="#faq" className="underline">FAQ</a></li>
             </ul>
           </nav>
 
@@ -162,202 +174,154 @@ export default function GuideComplete() {
               [&_p]:mt-3   [&_ul]:mt-3   [&_ol]:mt-3
               [&_ul]:list-disc [&_ul]:pl-6
               [&_ol]:list-decimal [&_ol]:pl-6
-              [&_a]:underline [&_a]:text-brand-700 hover:[&_a]:text-brand-600
+              [&_a]:underline hover:[&_a]:no-underline
             "
           >
-            <h2 id="quickstart">Quick-start checklist</h2>
+            <p>
+              This guide is built for one goal: help you get a student job in Amsterdam fast, legally, and with a schedule
+              that still lets you pass your classes. Use the quick start checklist, then apply using the filters.
+            </p>
+
+            <h2 id="quickstart">Quick start checklist</h2>
             <ul>
               <li>
-                Create a <strong>1-page CV</strong> (English or Dutch) with
-                availability block and skills line.
+                Make a <strong>one page CV</strong> (English or Dutch) with a clear availability block.
               </li>
               <li>
-                Choose <strong>2–3 categories</strong> to focus on:{" "}
-                <Link href="/categories/hospitality">Hospitality</Link>,{" "}
-                <Link href="/categories/delivery">Delivery</Link>,{" "}
-                <Link href="/categories/fieldwork">Fieldwork</Link>,{" "}
-                <Link href="/categories/tutoring">Tutoring</Link>,{" "}
-                <Link href="/categories/sales">Sales</Link>.
+                Pick <strong>2 to 3 categories</strong> and focus:{" "}
+                <Link href="/categories/hospitality">hospitality</Link>,{" "}
+                <Link href="/categories/delivery">delivery</Link>,{" "}
+                <Link href="/categories/fieldwork">warehouse and fieldwork</Link>,{" "}
+                <Link href="/categories/tutoring">tutoring</Link>,{" "}
+                <Link href="/categories/sales">sales</Link>,{" "}
+                <Link href="/categories/support">support</Link>.
               </li>
               <li>
-                Apply <strong>before 10:00</strong>, then{" "}
-                <strong>follow up the same day</strong>.
+                Apply <strong>before 10:00</strong> and <strong>follow up the same day</strong>.
               </li>
               <li>
-                Bring <strong>ID, BSN/appointment, IBAN</strong> and (if needed)
-                residence/work permission.
+                Prepare <strong>ID, BSN or appointment proof, IBAN</strong>. Keep residence documents ready if relevant.
               </li>
               <li>
-                Save time: <Link href="/jobs">browse all jobs</Link> or{" "}
-                <Link href="/jobs?english=true">English-friendly only</Link>.
+                Save time: <Link href="/jobs?city=Amsterdam">browse Amsterdam jobs</Link> or{" "}
+                <Link href="/jobs?city=Amsterdam&english=true">English friendly only</Link>.
               </li>
             </ul>
 
-            <h2 id="permits">Work permits & hours</h2>
+            <h2 id="permits">Work permits and hours</h2>
             <p>
-              Rules differ by nationality and enrollment. As a general
-              orientation (confirm specifics with your employer):
+              Rules depend on nationality and enrollment. Confirm your exact situation with your employer or official sources.
             </p>
             <ul>
+              <li><strong>EU or EEA</strong>: typically free to work under standard Dutch employment rules.</li>
               <li>
-                <strong>EU/EEA</strong>: usually free to work; standard Dutch
-                employment rules apply.
-              </li>
-              <li>
-                <strong>Non-EU</strong>: many students are limited to{" "}
-                <strong>~16 h/week during the academic year</strong> (and more
-                in summer) with the correct permission. Always verify your
-                personal situation before accepting hours.
+                <strong>Non EU</strong>: many students have limits during the academic year and may need a permit via the employer.
+                Always verify before you accept hours.
               </li>
             </ul>
 
-            <h2 id="contracts-pay">Contracts, pay & allowances</h2>
+            <h2 id="contracts-pay">Contracts, pay, allowances</h2>
             <ul>
+              <li><strong>Contract types</strong>: part time, on call, min max, temporary, agency. Ask about guaranteed hours.</li>
+              <li><strong>Typical pay</strong>: many student roles land around <strong>€13 to €17 per hour</strong>.</li>
               <li>
-                <strong>Types</strong>: part-time, on-call (0-uren), min-max, or
-                temp/agency. Ask about guaranteed hours.
+                <strong>Allowances</strong>: evening, night, weekend, holidays, plus holiday pay (often 8 percent).
               </li>
-              <li>
-                <strong>Pay</strong>: many student roles pay{" "}
-                <strong>€13–€17/h</strong>. Tutoring can reach{" "}
-                <strong>€15–€18+/h</strong>.
-              </li>
-              <li>
-                <strong>Allowances</strong>: evening/night/weekend premiums,
-                travel reimbursements, and <strong>8% holiday pay</strong>.
-              </li>
-              <li>
-                <strong>Payslip</strong>: check gross vs net, hours, and
-                allowances each month.
-              </li>
+              <li><strong>Payslip</strong>: check gross vs net, hours, allowances, and holiday pay.</li>
             </ul>
 
-            <h2 id="neighborhoods">Neighborhoods & commute tips</h2>
+            <h2 id="neighborhoods">Neighborhoods and commute tips</h2>
             <p>
-              Amsterdam is spread out; quick commutes help you keep grades and
-              income balanced:
+              Amsterdam is big and travel time kills your energy. Prioritize roles within a realistic commute.
             </p>
             <ul>
-              <li>
-                <strong>Centrum/Markthal</strong>: hospitality/retail density
-                and festivals.
-              </li>
-              <li>
-                <strong>Kralingen</strong>: near campus; café and tutoring gigs.
-              </li>
-              <li>
-                <strong>Waalhaven/Port</strong>: logistics & warehouse evening
-                shifts.
-              </li>
-              <li>
-                <strong>Zuid/Zuidplein</strong>: retail and events; good metro
-                links.
-              </li>
+              <li><strong>Centrum</strong>: hospitality, retail, tourist traffic, events venues.</li>
+              <li><strong>De Pijp and Oud Zuid</strong>: cafés, restaurants, boutique retail, barista and shift roles.</li>
+              <li><strong>Oud West and Westerpark</strong>: busy hospitality, evening shifts, weekend demand.</li>
+              <li><strong>Noord</strong>: events, hospitality, flexible schedules, good access from central ferries.</li>
+              <li><strong>Zuidas</strong>: catering and office services, weekday shifts.</li>
+              <li><strong>Sloterdijk and Westpoort</strong>: logistics and warehouses, often with evening or night premiums.</li>
             </ul>
 
-            <h2 id="categories">Best categories for students</h2>
+            <h2 id="categories">Best student job categories in Amsterdam</h2>
             <ul>
               <li>
-                <strong>Hospitality & Events</strong>: fast onboarding and
-                flexible shifts.
+                <strong>Hospitality and events</strong>: flexible shifts, fast onboarding, tips possible.
               </li>
               <li>
-                <strong>Delivery & Logistics</strong>: reliable pay; evening
-                schedules fit studies.
+                <strong>Delivery and logistics</strong>: stable demand, evening schedules, premiums.
               </li>
               <li>
-                <strong>Tutoring</strong>: high hourly pay; great for strong
-                English/specific subjects.
+                <strong>Tutoring</strong>: high hourly pay if you have strong subjects and communication.
               </li>
               <li>
-                <strong>Sales / Support</strong>: international teams value
-                language skills.
+                <strong>Sales and support</strong>: international teams value English, bonuses possible.
               </li>
             </ul>
 
-            <h2 id="where-to-look">Where to find jobs (fast)</h2>
+            <h2 id="where-to-look">Where to find jobs fast</h2>
             <ul>
+              <li><Link href="/jobs?city=Amsterdam">Student Jobs Amsterdam: all jobs</Link></li>
               <li>
-                <Link href="/jobs">Student Jobs Amsterdam — all jobs</Link>
+                Use filters:{" "}
+                <Link href="/jobs?city=Amsterdam&english=true">English friendly</Link>,{" "}
+                <Link href="/jobs?city=Amsterdam&evening=true">evening</Link>,{" "}
+                <Link href="/jobs?city=Amsterdam&weekend=true">weekend</Link>,{" "}
+                <Link href="/jobs?city=Amsterdam&noExperience=true">no experience</Link>.
               </li>
-              <li>
-                <Link href="/categories">Browse by category</Link> or{" "}
-                <Link href="/jobs?english=true">English-friendly only</Link>.
-              </li>
-              <li>
-                <Link href="/employers">Are you a business? Feature your job</Link>{" "}
-                (for partners).
-              </li>
+              <li><Link href="/categories">Browse by category</Link></li>
+              <li><Link href="/employers">Employer: feature your job</Link></li>
             </ul>
 
-            <h2 id="cv-templates">CV & message templates</h2>
-            <p>Paste this into your notes/cover field for quick applications:</p>
+            <h2 id="cv-templates">CV and message templates</h2>
+            <p>Copy and paste this into an application form or message:</p>
             <blockquote>
-              Hi! I’m a student in Amsterdam with availability on weekdays after
-              16:00 and weekends. I have customer-facing experience and can
-              start immediately. CV attached. Thanks for your time!
+              Hi! I’m a student in Amsterdam and I’m available on weekdays after 16:00 and on weekends. I can start
+              immediately and I’m reliable with evening and weekend shifts. CV attached. Thank you!
             </blockquote>
             <p>
-              Add a one-line skills bar on your CV:{" "}
-              <em>English C1 • Dutch A2 • Barista • Excel • Driver’s license B</em>
-              . List neighborhoods you can reach (Kralingen, Centrum, Zuidplein).
+              Add a one line skills bar on your CV:{" "}
+              <em>English C1 • Dutch A2 • Barista • Excel • Customer service • Driver’s license</em>.
             </p>
 
-            <h2 id="schedule">Weekly schedule that works with classes</h2>
+            <h2 id="schedule">Weekly schedule that fits classes</h2>
             <ul>
-              <li>
-                <strong>Mon–Thu</strong>: 1–2 evening shifts (logistics, retail,
-                hospitality).
-              </li>
-              <li>
-                <strong>Fri–Sun</strong>: 1–2 day/evening shifts (events, café).
-              </li>
-              <li>Keep a stable weekly pattern; managers love predictability.</li>
+              <li><strong>Mon to Thu</strong>: 1 to 2 evening shifts.</li>
+              <li><strong>Fri to Sun</strong>: 1 to 2 shifts, often the easiest hours to secure.</li>
+              <li>Keep the same pattern every week. Managers reward predictable availability.</li>
             </ul>
 
-            <h2 id="tax-bsn">BSN, bank, taxes & payslips</h2>
+            <h2 id="tax-bsn">BSN, bank, taxes, payslips</h2>
             <ul>
-              <li>
-                <strong>BSN</strong>: required for payroll; keep the
-                confirmation from your appointment if still pending.
-              </li>
-              <li>
-                <strong>Bank/IBAN</strong>: Dutch account speeds up payment.
-              </li>
-              <li>
-                <strong>Taxes</strong>: students often get refunds; keep
-                payslips and annual statements.
-              </li>
+              <li><strong>BSN</strong>: needed for payroll. Keep proof if your appointment is pending.</li>
+              <li><strong>IBAN</strong>: a Dutch bank account can speed up payments.</li>
+              <li><strong>Taxes</strong>: keep payslips and annual statements. Many students are eligible for refunds.</li>
             </ul>
 
             <div className="rounded-2xl border p-5 bg-white">
               <div className="font-semibold text-lg">Ready to apply?</div>
               <p className="mt-1">
-                Start here: <Link href="/jobs">see all jobs</Link>,{" "}
-                <Link href="/jobs?english=true">English-friendly only</Link> or{" "}
-                <Link href="/categories">browse categories</Link>. Hiring?{" "}
-                <Link href="/employers">Feature your job</Link>.
+                Start here: <Link href="/jobs?city=Amsterdam">Amsterdam jobs</Link>,{" "}
+                <Link href="/jobs?city=Amsterdam&english=true">English friendly</Link>, or{" "}
+                <Link href="/categories">categories</Link>.
               </p>
             </div>
 
             <h2 id="faq">FAQ</h2>
-            <h3>Is Dutch required?</h3>
+
+            <h3>Is Dutch required for student jobs in Amsterdam?</h3>
             <p>
-              Not always. Hospitality, logistics, delivery, events, and many
-              tutoring roles are English-friendly. Basic Dutch helps for retail.
+              Not always. Many hospitality, delivery, logistics, events, and support roles are English friendly. Basic Dutch helps for retail.
             </p>
 
-            <h3>How many hours should I target?</h3>
+            <h3>How many hours should I work as a student?</h3>
             <p>
-              Many students do <strong>8–20 h/week</strong>. Confirm any
-              restrictions tied to your residence/permit.
+              Many students aim for 8 to 20 hours per week. If you are non EU, check if you have additional limits or permit rules.
             </p>
 
-            <h3>What’s a good starting wage?</h3>
+            <h3>What is a good starting wage in Amsterdam?</h3>
             <p>
-              Often <strong>€13–€17/h</strong> for hospitality/logistics and{" "}
-              <strong>€15–€18+/h</strong> for tutoring, plus allowances where
-              applicable.
+              Often €13 to €17 per hour for many student roles. Tutoring can be higher, and allowances can boost your effective hourly rate.
             </p>
           </article>
         </div>
@@ -369,26 +333,28 @@ export default function GuideComplete() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Article",
-              headline:
-                "Student Jobs in Amsterdam — Complete Guide (2026): Visas, Contracts, Wages, Neighborhoods",
+              headline: "Student Jobs in Amsterdam (2026): Complete Guide",
               description:
-                "Permits, contracts, pay ranges, neighborhoods, and step-by-step tactics to land a student job in Amsterdam.",
-              image: OG_IMAGE_URL,
+                "Permits, contracts, pay ranges, neighborhoods, and step by step tactics to land a student job in Amsterdam fast.",
+              image: [OG_IMAGE_URL],
               datePublished: PUBLISH_DATE,
               dateModified: MODIFIED_DATE,
               author: {
                 "@type": "Organization",
                 name: "Student Jobs Amsterdam",
-                url: "https://studentjobsamsterdam.nl/",
+                url: `${BASE_URL}/`,
               },
               publisher: {
                 "@type": "Organization",
                 name: "Student Jobs Amsterdam",
+                url: `${BASE_URL}/`,
               },
               mainEntityOfPage: { "@type": "WebPage", "@id": CANONICAL },
+              about: [{ "@type": "Place", name: "Amsterdam" }],
             }),
           }}
         />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -396,98 +362,91 @@ export default function GuideComplete() {
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Blog",
-                  item: "https://studentjobsamsterdam.nl/blog",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "Student Jobs in Amsterdam — Complete Guide (2026)",
-                  item: CANONICAL,
-                },
+                { "@type": "ListItem", position: 1, name: "Blog", item: `${BASE_URL}/blog` },
+                { "@type": "ListItem", position: 2, name: "Student Jobs in Amsterdam (2026)", item: CANONICAL },
               ],
             }),
           }}
         />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "FAQPage",
+              "@id": `${CANONICAL}#faq`,
               mainEntity: [
                 {
                   "@type": "Question",
-                  name: "Is Dutch required?",
+                  name: "Is Dutch required for student jobs in Amsterdam?",
                   acceptedAnswer: {
                     "@type": "Answer",
                     text:
-                      "Not always. Hospitality, logistics, delivery, events, and many tutoring roles are English-friendly. Basic Dutch helps for retail.",
+                      "Not always. Many hospitality, delivery, logistics, events, and support roles are English friendly. Basic Dutch helps for retail roles.",
                   },
                 },
                 {
                   "@type": "Question",
-                  name: "How many hours should I target?",
+                  name: "How many hours should I work as a student?",
                   acceptedAnswer: {
                     "@type": "Answer",
                     text:
-                      "Many students do 8–20 hours/week. Confirm restrictions tied to your residence/permit before accepting shifts.",
+                      "Many students aim for 8 to 20 hours per week. Non EU students may have additional limits or permit requirements, so always check your personal situation.",
                   },
                 },
                 {
                   "@type": "Question",
-                  name: "What’s a good starting wage?",
+                  name: "What is a good starting wage in Amsterdam?",
                   acceptedAnswer: {
                     "@type": "Answer",
                     text:
-                      "Often €13–€17/h for hospitality/logistics and €15–€18+/h for tutoring, with allowances where applicable.",
+                      "Often €13 to €17 per hour for many student jobs. Tutoring can be higher, and allowances for evening, night, or weekend shifts can raise your effective hourly rate.",
                   },
                 },
               ],
             }),
           }}
         />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "HowTo",
-              name: "How to quickly land a student job in Amsterdam",
-              image: OG_IMAGE_URL,
+              name: "How to get a student job in Amsterdam fast",
+              image: [OG_IMAGE_URL],
               totalTime: "PT2H",
               supply: [
-                { "@type": "HowToSupply", name: "1-page CV (PDF)" },
-                { "@type": "HowToSupply", name: "ID + BSN/appointment" },
-                { "@type": "HowToSupply", name: "IBAN (bank account)" },
+                { "@type": "HowToSupply", name: "One page CV (PDF)" },
+                { "@type": "HowToSupply", name: "ID, BSN or appointment proof" },
+                { "@type": "HowToSupply", name: "IBAN bank account" },
               ],
               step: [
                 {
                   "@type": "HowToStep",
-                  name: "Pick 2–3 categories",
+                  name: "Pick categories that hire fast",
                   text:
-                    "Choose roles that match your schedule and language (hospitality, logistics, delivery, tutoring, sales).",
+                    "Choose 2 to 3 categories such as hospitality, delivery, logistics, tutoring, sales, or customer support based on your schedule and language.",
                 },
                 {
                   "@type": "HowToStep",
-                  name: "Apply before 10:00",
+                  name: "Apply early and follow up",
                   text:
-                    "Send 5–10 targeted applications in the morning; follow up the same day.",
+                    "Apply before 10:00 and follow up the same day. Employers often fill shifts quickly.",
                 },
                 {
                   "@type": "HowToStep",
                   name: "Use a short message",
                   text:
-                    "Paste a 2–3 sentence note highlighting availability and start date; attach your CV.",
+                    "Send a short note with your availability, start date, and strengths. Attach your CV.",
                 },
                 {
                   "@type": "HowToStep",
                   name: "Confirm documents",
                   text:
-                    "Bring ID, BSN/appointment letter, IBAN, and any required work permission.",
+                    "Bring ID, BSN or appointment confirmation, IBAN, and any required residence or work permission documents.",
                 },
               ],
             }),

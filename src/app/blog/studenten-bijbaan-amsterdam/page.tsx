@@ -3,51 +3,72 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+const BASE_URL = "https://studentjobsamsterdam.nl";
+
 const PUBLISH_DATE = "2026-10-02";
-const MODIFIED_DATE = "2026-10-02";
-const CANONICAL = "https://studentjobsamsterdam.nl/studenten-bijbaan-amsterdam";
+const MODIFIED_DATE = "2026-02-07";
+const CANONICAL = `${BASE_URL}/studenten-bijbaan-amsterdam`;
 
-// Use chloe1 from /public/blog/
-const HERO_IMAGE_PATH =
-  "/blog/erasmus-experience-in-amsterdam-netherlands-by-chloe1.jpg";
+// Local image in /public/blog/amsterdam-bridge.jpg
+const HERO_IMAGE_PATH = "/blog/amsterdam-bridge.jpg";
 
-// Absolute URL for OG/Twitter/JSON-LD
-const OG_IMAGE_URL = `https://studentjobsamsterdam.nl${HERO_IMAGE_PATH}`;
+// Absolute URL for OG, Twitter, JSON-LD
+const OG_IMAGE_URL = `${BASE_URL}${HERO_IMAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title:
-    "Studenten bijbaan Amsterdam (2026) – Goed betaald, Engelstalig & weekend",
+  metadataBase: new URL(BASE_URL),
+  title: "Studenten bijbaan Amsterdam (2026) | Goed betaald, Engelstalig, avond en weekend",
   description:
-    "De ultieme gids voor een studenten bijbaan in Amsterdam: avond/weekend, Engelstalig, zonder ervaring. Uurloon-tabellen, contractvormen, wijken en snelle filters.",
+    "De complete gids voor een studenten bijbaan in Amsterdam. Filters voor avond en weekend, Engelstalige banen, zonder ervaring starten, uurloon per sector, contracten en live vacatures.",
   keywords: [
     "studenten bijbaan Amsterdam",
     "bijbaan Amsterdam",
+    "studentenbaan Amsterdam",
+    "parttime baan Amsterdam student",
     "student jobs Amsterdam",
-    "parttime vacatures Amsterdam",
+    "Engelstalige bijbaan Amsterdam",
+    "weekend bijbaan Amsterdam",
+    "avond bijbaan Amsterdam",
+    "vacatures Amsterdam studenten",
   ],
   alternates: { canonical: CANONICAL },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
-    title:
-      "Studenten bijbaan Amsterdam (2026) – Goed betaald, Engelstalig & weekend",
+    title: "Studenten bijbaan Amsterdam (2026) | Goed betaald, Engelstalig, avond en weekend",
     description:
-      "Pillar-pagina met snelle filters (avond, weekend, Engels, zonder ervaring), uurloon per sector en live vacatures in Amsterdam.",
+      "Pillar pagina met snelle filters, uurloon per sector, contractvormen en live vacatures voor studenten in Amsterdam.",
     url: CANONICAL,
     type: "article",
     locale: "nl_NL",
     siteName: "Student Jobs Amsterdam",
     publishedTime: PUBLISH_DATE,
     modifiedTime: MODIFIED_DATE,
-    images: [{ url: OG_IMAGE_URL }],
+    images: [
+      {
+        url: OG_IMAGE_URL,
+        width: 1200,
+        height: 630,
+        alt: "Amsterdam brug en grachten",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Studenten bijbaan Amsterdam (2026) – Goed betaald, Engelstalig & weekend",
+    title: "Studenten bijbaan Amsterdam (2026) | Goed betaald, Engelstalig, avond en weekend",
     description:
-      "Waar vind je snel een bijbaan in Amsterdam? Bekijk filters, uurloon-tabellen en live vacatures.",
+      "Snel een bijbaan in Amsterdam vinden als student. Filters, uurloon, contracten en live vacatures.",
     images: [OG_IMAGE_URL],
   },
-  robots: { index: true, follow: true },
 };
 
 export default function StudentenBijbaanAmsterdam() {
@@ -59,9 +80,9 @@ export default function StudentenBijbaanAmsterdam() {
           <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
             Studenten bijbaan in Amsterdam: de ultieme gids (2026)
           </h1>
+
           <p className="mt-3 text-sm text-slate-600">
-            Door <span className="font-medium">Student Jobs Amsterdam</span> •
-            Bijgewerkt{" "}
+            Door <span className="font-medium">Student Jobs Amsterdam</span> • Bijgewerkt{" "}
             {new Date(MODIFIED_DATE).toLocaleDateString("nl-NL", {
               year: "numeric",
               month: "long",
@@ -69,7 +90,7 @@ export default function StudentenBijbaanAmsterdam() {
             })}
           </p>
 
-          {/* Language toggle / A/B: Read in English */}
+          {/* Language toggle */}
           <div className="mt-3">
             <Link
               href="/blog/student-jobs-amsterdam-complete-guide-2026"
@@ -81,16 +102,27 @@ export default function StudentenBijbaanAmsterdam() {
             </Link>
           </div>
 
-          <div className="mt-5 overflow-hidden rounded-2xl border bg-white">
+          <figure className="mt-5 overflow-hidden rounded-2xl border bg-white">
             <Image
               src={HERO_IMAGE_PATH}
-              alt="Erasmus experience in Amsterdam"
+              alt="Amsterdam brug en grachten, bijbaan vinden als student in Amsterdam"
               width={1280}
               height={720}
               priority
               className="w-full h-auto object-cover"
             />
-          </div>
+            <figcaption className="px-4 py-3 text-xs text-slate-600">
+              Foto:{" "}
+              <a
+                href="https://www.amsterdamprivateboat.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                amsterdamprivateboat.com
+              </a>
+            </figcaption>
+          </figure>
 
           {/* Quick filters */}
           <div className="mt-6 flex flex-wrap gap-2">
@@ -129,7 +161,7 @@ export default function StudentenBijbaanAmsterdam() {
 
         {/* CONTENT + TOC */}
         <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_320px]">
-          {/* TOC (mobile first) */}
+          {/* TOC */}
           <nav
             aria-label="Inhoud"
             className="
@@ -141,56 +173,16 @@ export default function StudentenBijbaanAmsterdam() {
           >
             <div className="font-semibold">Op deze pagina</div>
             <ul className="mt-2 space-y-1">
-              <li>
-                <a href="#waar-vinden" className="underline">
-                  Waar vind je snel een bijbaan (wijken)
-                </a>
-              </li>
-              <li>
-                <a href="#engels" className="underline">
-                  Engelstalige studentenbanen
-                </a>
-              </li>
-              <li>
-                <a href="#roosters" className="underline">
-                  Weekend & avond
-                </a>
-              </li>
-              <li>
-                <a href="#zonder-ervaring" className="underline">
-                  Zonder ervaring: 10 instapfuncties
-                </a>
-              </li>
-              <li>
-                <a href="#uurloon" className="underline">
-                  Uurloon & fooi (tabel)
-                </a>
-              </li>
-              <li>
-                <a href="#contracten" className="underline">
-                  Contractvormen
-                </a>
-              </li>
-              <li>
-                <a href="#non-eu" className="underline">
-                  Non-EU studenten
-                </a>
-              </li>
-              <li>
-                <a href="#sollicitatie" className="underline">
-                  Sollicitatietips + gratis CV
-                </a>
-              </li>
-              <li>
-                <a href="#live-vacatures" className="underline">
-                  Live vacatures (Amsterdam)
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="underline">
-                  FAQ
-                </a>
-              </li>
+              <li><a href="#waar-vinden" className="underline">Waar vind je snel een bijbaan (wijken)</a></li>
+              <li><a href="#engels" className="underline">Engelstalige studentenbanen</a></li>
+              <li><a href="#roosters" className="underline">Weekend en avond</a></li>
+              <li><a href="#zonder-ervaring" className="underline">Zonder ervaring: 10 instapfuncties</a></li>
+              <li><a href="#uurloon" className="underline">Uurloon en fooi (tabel)</a></li>
+              <li><a href="#contracten" className="underline">Contractvormen</a></li>
+              <li><a href="#non-eu" className="underline">Non EU studenten</a></li>
+              <li><a href="#sollicitatie" className="underline">Sollicitatietips en gratis CV</a></li>
+              <li><a href="#live-vacatures" className="underline">Live vacatures (Amsterdam)</a></li>
+              <li><a href="#faq" className="underline">FAQ</a></li>
             </ul>
           </nav>
 
@@ -209,80 +201,57 @@ export default function StudentenBijbaanAmsterdam() {
               [&_a]:underline hover:[&_a]:no-underline
             "
           >
-            <h2 id="waar-vinden">
-              Waar vind je snel een bijbaan in Amsterdam (Kralingen/EUR, Centrum,
-              Zuidplein, Waalhaven)
-            </h2>
             <p>
-              De snelste matches ontstaan als je dichtbij inzetbaar bent. Begin
-              met <Link href="/jobs?city=Amsterdam">alle vacatures</Link> en
-              filter op jouw wijk:
+              Wil je snel een studenten bijbaan in Amsterdam? De beste aanpak is simpel:
+              kies 2 tot 3 sectoren, zet je beschikbaarheid scherp neer (avond of weekend),
+              en solliciteer gericht met korte follow up.
+            </p>
+
+            <h2 id="waar-vinden">Waar vind je snel een bijbaan in Amsterdam (wijken en gebieden)</h2>
+            <p>
+              De snelste match krijg je als je dichtbij inzetbaar bent. Begin met{" "}
+              <Link href="/jobs?city=Amsterdam">alle vacatures</Link> en kies een gebied dat past bij jouw reisafstand:
             </p>
             <ul>
-              <li>
-                <strong>Kralingen / EUR</strong>: cafés, bijles, campusbanen,
-                barista.
-              </li>
-              <li>
-                <strong>Centrum</strong>: horeca, retail, events
-                (festival/locatie).
-              </li>
-              <li>
-                <strong>Zuidplein</strong>: retail, events, klantenservice.
-              </li>
-              <li>
-                <strong>Waalhaven / Haven</strong>: logistiek, magazijn,
-                avond-/nachttoeslagen.
-              </li>
+              <li><strong>Centrum</strong>: horeca, retail, toerisme, evenementen.</li>
+              <li><strong>De Pijp en Oud Zuid</strong>: cafés, restaurants, barista, boutique retail.</li>
+              <li><strong>Oud West en Westerpark</strong>: horeca, avondshifts, weekenddrukte.</li>
+              <li><strong>Amsterdam Oost</strong>: horeca en retail, vaak veel studenten.</li>
+              <li><strong>Amsterdam Noord</strong>: events, horeca, flexibele shifts.</li>
+              <li><strong>Zuidas</strong>: catering en kantoorservices, vaker doordeweeks.</li>
+              <li><strong>Sloterdijk en Westpoort</strong>: logistiek en magazijn, vaak toeslagen in de avond of nacht.</li>
+              <li><strong>Zuidoost</strong>: retail en grote locaties, soms langere shifts.</li>
             </ul>
 
-            <h2 id="engels">
-              Engelstalige studentenbanen (hospitality, delivery/logistiek,
-              retail, klantenservice)
-            </h2>
+            <h2 id="engels">Engelstalige studentenbanen in Amsterdam</h2>
             <p>
-              Amsterdam heeft veel <strong>Engelstalige teams</strong>, vooral
-              in hospitality, bezorging/logistiek, internationale retail en
-              support. Start hier:{" "}
-              <Link href="/jobs?city=Amsterdam&english=true">
-                Engels-vriendelijke vacatures
-              </Link>
-              .
+              Amsterdam heeft veel <strong>Engelstalige teams</strong>, vooral in horeca, bezorging, logistiek,
+              internationale retail en support. Start met{" "}
+              <Link href="/jobs?city=Amsterdam&english=true">Engels vriendelijke vacatures</Link>.
             </p>
 
-            <h2 id="roosters">
-              Weekend & avond: roosters die naast college passen
-            </h2>
+            <h2 id="roosters">Weekend en avond: roosters die naast college passen</h2>
             <ul>
-              <li>
-                <strong>Avondshifts</strong> (na 17:00) in logistiek, events,
-                horeca.
-              </li>
-              <li>
-                <strong>Weekend</strong> voor maximale uren zonder
-                college-conflicten.
-              </li>
-              <li>
-                <strong>Toeslagen</strong>: avond/nacht/weekend +{" "}
-                <strong>8% vakantiegeld</strong> (vaak maandelijks/jaarlijks).
-              </li>
+              <li><strong>Avondshifts</strong> na 17:00 in horeca, events, logistiek.</li>
+              <li><strong>Weekend</strong> voor meer uren zonder colleges.</li>
+              <li><strong>Toeslagen</strong> voor avond, nacht of weekend en vaak ook vakantiegeld.</li>
             </ul>
 
             <h2 id="zonder-ervaring">Zonder ervaring: 10 instapfuncties</h2>
             <ul>
               <li>Vakkenvuller</li>
-              <li>Afwas / Keukenhulp</li>
-              <li>Bezorger (fiets/auto)</li>
-              <li>Host/Hostess</li>
-              <li>Flyer/promotie</li>
-              <li>Runner/bediening</li>
+              <li>Afwas en keukenhulp</li>
+              <li>Bezorger (fiets of scooter)</li>
+              <li>Host of hostess</li>
+              <li>Promotiewerk</li>
+              <li>Runner of bediening</li>
               <li>Magazijnmedewerker</li>
               <li>Kassamedewerker</li>
-              <li>Data-labeling (remote)</li>
+              <li>Data labeling (remote)</li>
               <li>Schoonmaak</li>
             </ul>
 
-            <h2 id="uurloon">Uurloon & fooi: realistische ranges per sector</h2>
+            <h2 id="uurloon">Uurloon en fooi: realistische ranges per sector</h2>
             <div className="overflow-x-auto rounded-2xl border bg-white">
               <table className="w-full text-left text-sm">
                 <thead className="bg-slate-50">
@@ -290,94 +259,74 @@ export default function StudentenBijbaanAmsterdam() {
                     <th className="px-4 py-3">Sector</th>
                     <th className="px-4 py-3">Uurloon (bruto)</th>
                     <th className="px-4 py-3">Toeslagen</th>
-                    <th className="px-4 py-3">Fooi/Bonus</th>
+                    <th className="px-4 py-3">Fooi of bonus</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="px-4 py-3">Horeca (barista/bediening)</td>
-                    <td className="px-4 py-3">€13 – €16</td>
-                    <td className="px-4 py-3">Weekend/avond</td>
-                    <td className="px-4 py-3">€1 – €3 p/u (fooi, variabel)</td>
+                    <td className="px-4 py-3">Horeca (barista, bediening)</td>
+                    <td className="px-4 py-3">€13 tot €16</td>
+                    <td className="px-4 py-3">Weekend, avond</td>
+                    <td className="px-4 py-3">Fooi is variabel</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3">Logistiek / Magazijn</td>
-                    <td className="px-4 py-3">€14 – €18</td>
-                    <td className="px-4 py-3">Avond/nacht/weekend</td>
-                    <td className="px-4 py-3">—</td>
+                    <td className="px-4 py-3">Logistiek en magazijn</td>
+                    <td className="px-4 py-3">€14 tot €18</td>
+                    <td className="px-4 py-3">Avond, nacht, weekend</td>
+                    <td className="px-4 py-3">Meestal geen</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3">Bezorging (platform/retail)</td>
-                    <td className="px-4 py-3">€13 – €17</td>
-                    <td className="px-4 py-3">Weekend/weer</td>
-                    <td className="px-4 py-3">Per rit/bonus</td>
+                    <td className="px-4 py-3">Bezorging</td>
+                    <td className="px-4 py-3">€13 tot €17</td>
+                    <td className="px-4 py-3">Weekend, weer</td>
+                    <td className="px-4 py-3">Bonus per shift of per rit</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3">Events / Crew / Lead</td>
-                    <td className="px-4 py-3">€13 – €17+</td>
-                    <td className="px-4 py-3">Weekend/avond</td>
-                    <td className="px-4 py-3">Lead-toeslag</td>
+                    <td className="px-4 py-3">Events (crew, lead)</td>
+                    <td className="px-4 py-3">€13 tot €17+</td>
+                    <td className="px-4 py-3">Weekend, avond</td>
+                    <td className="px-4 py-3">Lead toeslag</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3">Retail / Kassamedewerker</td>
-                    <td className="px-4 py-3">€13 – €16</td>
-                    <td className="px-4 py-3">Zondag/feestdag</td>
+                    <td className="px-4 py-3">Retail</td>
+                    <td className="px-4 py-3">€13 tot €16</td>
+                    <td className="px-4 py-3">Zondag, feestdag</td>
                     <td className="px-4 py-3">Personeelskorting</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3">Klantenservice / Support</td>
-                    <td className="px-4 py-3">€14 – €17</td>
-                    <td className="px-4 py-3">Avond/weekend</td>
-                    <td className="px-4 py-3">Bonus KPI</td>
+                    <td className="px-4 py-3">Klantenservice en support</td>
+                    <td className="px-4 py-3">€14 tot €17</td>
+                    <td className="px-4 py-3">Avond, weekend</td>
+                    <td className="px-4 py-3">KPI bonus</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3">Bijles / Tutoring</td>
-                    <td className="px-4 py-3">€15 – €22</td>
-                    <td className="px-4 py-3">—</td>
-                    <td className="px-4 py-3">Extra bij specialisatie</td>
+                    <td className="px-4 py-3">Bijles en tutoring</td>
+                    <td className="px-4 py-3">€15 tot €22</td>
+                    <td className="px-4 py-3">Meestal geen</td>
+                    <td className="px-4 py-3">Hoger bij specialisatie</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <p className="text-sm text-slate-600">
-              Indicatief voor 2026. Werkelijk loon hangt af van leeftijd,
-              ervaring, cao en toeslagen.
+              Indicatief voor 2026. Werkelijk loon hangt af van leeftijd, ervaring, cao en toeslagen.
             </p>
 
-            <h2 id="contracten">
-              Contractvormen: parttime / tijdelijk / oproep – wat past bij jou?
-            </h2>
+            <h2 id="contracten">Contractvormen: parttime, tijdelijk, oproep</h2>
             <ul>
-              <li>
-                <strong>Parttime</strong>: vaste uren per week; voorspelbaar
-                rooster.
-              </li>
-              <li>
-                <strong>Oproep (0-uren / min-max)</strong>: flexibel; vraag naar
-                minimumuren en opzegtermijn.
-              </li>
-              <li>
-                <strong>Tijdelijk / Uitzend</strong>: snel starten; let op
-                periode en toeslagen.
-              </li>
+              <li><strong>Parttime</strong>: vaste uren per week en voorspelbaar rooster.</li>
+              <li><strong>Oproep (0 uren of min max)</strong>: flexibel, vraag naar minimumuren en opzegtermijn.</li>
+              <li><strong>Tijdelijk of uitzend</strong>: snel starten, check periode en toeslagen.</li>
             </ul>
 
-            <h2 id="non-eu">Non-EU studenten: urenlimiet, TWV (kort, feitelijk)</h2>
+            <h2 id="non-eu">Non EU studenten: uren en TWV</h2>
             <p>
-              Niet-EU studenten hebben vaak een{" "}
-              <strong>urenlimiet tijdens het studiejaar</strong> en een{" "}
-              <strong>TWV (tewerkstellingsvergunning)</strong> nodig via
-              werkgever/uitzendbureau. Controleer altijd je persoonlijke situatie
-              en de meest recente regels bij officiële bronnen zoals{" "}
-              <a
-                href="https://ind.nl"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
+              Niet EU studenten hebben vaak een urenlimiet tijdens het studiejaar en kunnen een TWV nodig hebben via
+              werkgever of uitzendbureau. Check altijd de actuele regels bij{" "}
+              <a href="https://ind.nl" target="_blank" rel="noopener noreferrer" className="underline">
                 IND
               </a>{" "}
-              of{" "}
+              en{" "}
               <a
                 href="https://www.rijksoverheid.nl/onderwerpen/werken-tijdens-studie"
                 target="_blank"
@@ -389,122 +338,84 @@ export default function StudentenBijbaanAmsterdam() {
               .
             </p>
 
-            <h2 id="sollicitatie">Sollicitatietips + gratis CV-template (CTA)</h2>
+            <h2 id="sollicitatie">Sollicitatietips en gratis CV template</h2>
             <ul>
-              <li>
-                Houd je CV <strong>op 1 pagina</strong> met een korte skills-bar
-                (Nederlands A2 / Engels C1 / Barista / Excel).
-              </li>
-              <li>
-                Solliciteer <strong>voor 10:00</strong> en{" "}
-                <strong>volg dezelfde dag</strong> op.
-              </li>
-              <li>
-                Noem <strong>wijken</strong> die je snel bereikt (Kralingen,
-                Centrum, Zuidplein, Waalhaven).
-              </li>
+              <li>Hou je CV op 1 pagina met een korte skills regel.</li>
+              <li>Solliciteer vroeg op de dag en stuur dezelfde dag een korte follow up.</li>
+              <li>Noem gebieden die je snel bereikt, bijvoorbeeld Centrum, De Pijp, Oost, Noord.</li>
             </ul>
             <div className="rounded-2xl border p-5 bg-white">
               <div className="font-semibold text-lg">Klaar om te starten?</div>
               <p className="mt-1">
                 Bekijk{" "}
-                <Link href="/jobs?city=Amsterdam">alle vacatures (Amsterdam)</Link>
-                ,{" "}
-                <Link href="/jobs?city=Amsterdam&english=true">Engels-vriendelijk</Link>{" "}
+                <Link href="/jobs?city=Amsterdam">alle vacatures (Amsterdam)</Link>,{" "}
+                <Link href="/jobs?city=Amsterdam&english=true">Engels vriendelijk</Link>{" "}
                 of <Link href="/categories">categorieën</Link>. Werkgever?{" "}
                 <Link href="/employers">Adverteer je vacature</Link>.
               </p>
               <p className="mt-2 text-sm">
-                Gratis CV-template:{" "}
-                <Link href="/assets/cv-template-student.pdf">download hier</Link>.
+                Gratis CV template: <Link href="/assets/cv-template-student.pdf">download hier</Link>.
               </p>
             </div>
 
-            <h2 id="live-vacatures">Live vacatures (embed)</h2>
+            <h2 id="live-vacatures">Live vacatures (Amsterdam)</h2>
             <p className="text-sm text-slate-600">
               Tip: filter op{" "}
               <Link href="/jobs?city=Amsterdam&evening=true">avond</Link>,{" "}
               <Link href="/jobs?city=Amsterdam&weekend=true">weekend</Link>,{" "}
-              <Link href="/jobs?city=Amsterdam&noExperience=true">
-                zonder ervaring
-              </Link>
-              , <Link href="/jobs?city=Amsterdam&english=true">Engels</Link>.
+              <Link href="/jobs?city=Amsterdam&noExperience=true">zonder ervaring</Link>,{" "}
+              <Link href="/jobs?city=Amsterdam&english=true">Engels</Link>.
             </p>
             <div className="rounded-2xl border bg-white p-4">
               <Link href="/jobs?city=Amsterdam" className="underline">
                 Open live vacatures voor Amsterdam
               </Link>
               <div className="mt-3 flex flex-wrap gap-2">
-                <Link
-                  href="/categories/hospitality"
-                  className="rounded-full border px-3 py-1 text-sm underline"
-                >
+                <Link href="/categories/hospitality" className="rounded-full border px-3 py-1 text-sm underline">
                   Horeca
                 </Link>
-                <Link
-                  href="/categories/delivery"
-                  className="rounded-full border px-3 py-1 text-sm underline"
-                >
-                  Bezorging / Logistiek
+                <Link href="/categories/delivery" className="rounded-full border px-3 py-1 text-sm underline">
+                  Bezorging en logistiek
                 </Link>
-                <Link
-                  href="/categories/retail"
-                  className="rounded-full border px-3 py-1 text-sm underline"
-                >
+                <Link href="/categories/retail" className="rounded-full border px-3 py-1 text-sm underline">
                   Retail
                 </Link>
-                <Link
-                  href="/categories/events"
-                  className="rounded-full border px-3 py-1 text-sm underline"
-                >
+                <Link href="/categories/events" className="rounded-full border px-3 py-1 text-sm underline">
                   Events
                 </Link>
-                <Link
-                  href="/categories/support"
-                  className="rounded-full border px-3 py-1 text-sm underline"
-                >
+                <Link href="/categories/support" className="rounded-full border px-3 py-1 text-sm underline">
                   Klantenservice
                 </Link>
-                <Link
-                  href="/categories/tutoring"
-                  className="rounded-full border px-3 py-1 text-sm underline"
-                >
+                <Link href="/categories/tutoring" className="rounded-full border px-3 py-1 text-sm underline">
                   Bijles
                 </Link>
               </div>
             </div>
 
             <h2 id="faq">FAQ</h2>
+
             <h3>Hoeveel uur mag ik werken?</h3>
             <p>
-              Veel studenten werken <strong>8–20 uur per week</strong>. Voor
-              Non-EU kunnen er extra beperkingen gelden; check officiële bronnen
-              of je werkgever/uitzendbureau.
+              Veel studenten werken 8 tot 20 uur per week. Voor Non EU studenten kunnen extra beperkingen gelden.
+              Controleer je situatie bij officiële bronnen en je werkgever.
             </p>
 
-            <h3>Zijn er Engelstalige bijbanen?</h3>
+            <h3>Zijn er Engelstalige bijbanen in Amsterdam?</h3>
             <p>
-              Ja. Vooral in horeca, bezorging/logistiek, retail en klantenservice.
-              Start bij{" "}
-              <Link href="/jobs?city=Amsterdam&english=true">
-                Engels-vriendelijke vacatures
-              </Link>
-              .
+              Ja. Vooral in horeca, bezorging, logistiek, internationale retail en klantenservice. Start bij{" "}
+              <Link href="/jobs?city=Amsterdam&english=true">Engels vriendelijke vacatures</Link>.
             </p>
 
             <h3>Wat verdient een student in 2026?</h3>
             <p>
-              Vaak <strong>€13–€17 per uur</strong> in horeca/logistiek/retail en{" "}
-              <strong>€15–€22</strong> voor bijles. Toeslagen en fooi kunnen je
-              uurloon verhogen.
+              Vaak €13 tot €17 per uur in horeca, logistiek en retail, en €15 tot €22 voor bijles.
+              Toeslagen en fooi kunnen je effectieve uurloon verhogen.
             </p>
 
-            <h3>Welke wijken zijn het handigst?</h3>
+            <h3>Welke wijken zijn handig voor een bijbaan?</h3>
             <p>
-              <strong>Kralingen/EUR</strong> (campus, cafés),{" "}
-              <strong>Centrum</strong> (horeca/retail/events),{" "}
-              <strong>Zuidplein</strong> (retail/events) en{" "}
-              <strong>Waalhaven</strong> (logistiek/avond).
+              Centrum, De Pijp, Oud West, Oost en Noord zijn vaak handig voor horeca en retail.
+              Sloterdijk en Westpoort zijn sterk voor logistiek en magazijn.
             </p>
           </article>
         </div>
@@ -516,27 +427,37 @@ export default function StudentenBijbaanAmsterdam() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Article",
-              headline:
-                "Studenten bijbaan Amsterdam (2026) – Goed betaald, Engelstalig & weekend",
+              headline: "Studenten bijbaan Amsterdam (2026) | Goed betaald, Engelstalig, avond en weekend",
               description:
-                "Pillar-gids voor studenten bijbanen in Amsterdam met snelle filters, uurloon-tabellen, contractvormen en live vacatures.",
-              image: OG_IMAGE_URL,
+                "Pillar gids voor studenten bijbanen in Amsterdam met snelle filters, uurloon per sector, contractvormen en live vacatures.",
+              image: [
+                {
+                  "@type": "ImageObject",
+                  url: OG_IMAGE_URL,
+                  width: 1200,
+                  height: 630,
+                  creditText: "amsterdamprivateboat.com",
+                },
+              ],
               datePublished: PUBLISH_DATE,
               dateModified: MODIFIED_DATE,
               inLanguage: "nl-NL",
               author: {
                 "@type": "Organization",
                 name: "Student Jobs Amsterdam",
-                url: "https://studentjobsamsterdam.nl/",
+                url: `${BASE_URL}/`,
               },
               publisher: {
                 "@type": "Organization",
                 name: "Student Jobs Amsterdam",
+                url: `${BASE_URL}/`,
               },
               mainEntityOfPage: { "@type": "WebPage", "@id": CANONICAL },
+              about: [{ "@type": "Place", name: "Amsterdam" }],
             }),
           }}
         />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -544,28 +465,20 @@ export default function StudentenBijbaanAmsterdam() {
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Home",
-                  item: "https://studentjobsamsterdam.nl/",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "Studenten bijbaan Amsterdam",
-                  item: CANONICAL,
-                },
+                { "@type": "ListItem", position: 1, name: "Home", item: `${BASE_URL}/` },
+                { "@type": "ListItem", position: 2, name: "Studenten bijbaan Amsterdam", item: CANONICAL },
               ],
             }),
           }}
         />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "FAQPage",
+              "@id": `${CANONICAL}#faq`,
               mainEntity: [
                 {
                   "@type": "Question",
@@ -573,16 +486,16 @@ export default function StudentenBijbaanAmsterdam() {
                   acceptedAnswer: {
                     "@type": "Answer",
                     text:
-                      "Veel studenten werken 8–20 uur per week. Voor Non-EU studenten kunnen extra beperkingen en vergunningseisen gelden; controleer de actuele regels en je persoonlijke situatie.",
+                      "Veel studenten werken 8 tot 20 uur per week. Voor Non EU studenten kunnen extra beperkingen en vergunningseisen gelden. Controleer altijd je persoonlijke situatie en de actuele regels.",
                   },
                 },
                 {
                   "@type": "Question",
-                  name: "Zijn er Engelstalige bijbanen?",
+                  name: "Zijn er Engelstalige bijbanen in Amsterdam?",
                   acceptedAnswer: {
                     "@type": "Answer",
                     text:
-                      "Ja. Vooral in horeca, bezorging/logistiek, retail en klantenservice. Filter op Engels-vriendelijke vacatures om sneller te matchen.",
+                      "Ja. Vooral in horeca, bezorging, logistiek, internationale retail en klantenservice. Filter op Engels vriendelijke vacatures om sneller te matchen.",
                   },
                 },
                 {
@@ -591,16 +504,16 @@ export default function StudentenBijbaanAmsterdam() {
                   acceptedAnswer: {
                     "@type": "Answer",
                     text:
-                      "Doorgaans €13–€17 per uur in horeca/logistiek/retail en €15–€22 voor bijles. Toeslagen (avond/nacht/weekend) en fooi kunnen het uurloon verhogen.",
+                      "Vaak €13 tot €17 per uur in horeca, logistiek en retail, en €15 tot €22 voor bijles. Toeslagen en fooi kunnen het effectieve uurloon verhogen.",
                   },
                 },
                 {
                   "@type": "Question",
-                  name: "Welke wijken zijn het handigst?",
+                  name: "Welke wijken zijn handig voor een bijbaan?",
                   acceptedAnswer: {
                     "@type": "Answer",
                     text:
-                      "Kralingen/EUR (campus/cafés), Centrum (horeca/retail/events), Zuidplein (retail/events) en Waalhaven (logistiek/avond).",
+                      "Centrum, De Pijp, Oud West, Oost en Noord zijn vaak handig voor horeca en retail. Sloterdijk en Westpoort zijn sterk voor logistiek en magazijn.",
                   },
                 },
               ],
