@@ -325,7 +325,7 @@ export default function Page() {
               Why Amsterdam works for students
             </h2>
             <ul className="mt-4 space-y-3 text-gray-700">
-              <li>• Strong demand in hospitality around the city center/Markthal.</li>
+              <li>• Strong demand in hospitality around the city center.</li>
               <li>• Logistics & warehousing shifts linked to port operations.</li>
               <li>• Evening & weekend work compatible with study schedules.</li>
               <li>• Many English-friendly roles; basic Dutch helps for retail.</li>

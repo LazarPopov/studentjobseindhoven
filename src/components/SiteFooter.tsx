@@ -5,80 +5,120 @@ export default function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-10 border-t bg-white">
+    <footer className="mt-10 border-t bg-white" aria-labelledby="footer-heading">
+      <h2 id="footer-heading" className="sr-only">
+        Footer
+      </h2>
+
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Brand */}
         <div>
           <div className="text-lg sm:text-xl font-semibold">Student Jobs Amsterdam</div>
           <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-            Local guides and listings for students in Amsterdam. English-friendly roles, fast apply tips, and real pay ranges.
+            Student jobs, bijbaan tips, and city guides for Amsterdam. Find English friendly roles, compare pay, and apply
+            fast.
+          </p>
+          <p className="mt-3 text-xs text-slate-500">
+            Some links may be partner links. This helps support the site at no extra cost to you.
           </p>
         </div>
 
         {/* Explore */}
-        <nav aria-label="Footer navigation">
+        <nav aria-label="Explore Student Jobs Amsterdam">
           <div className="font-semibold">Explore</div>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><Link href="/" className="underline underline-offset-2">Home</Link></li>
-            <li><Link href="/jobs" className="underline underline-offset-2">Jobs</Link></li>
-            <li><Link href="/categories" className="underline underline-offset-2">Categories</Link></li>
-            <li><Link href="/blog" className="underline underline-offset-2">Blog</Link></li>
-            <li><Link href="/employers" className="underline underline-offset-2">Employers</Link></li>
-            <li><Link href="/contact" className="underline underline-offset-2">Contact</Link></li>
+            <li>
+              <Link href="/" className="underline underline-offset-2">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/jobs" className="underline underline-offset-2">
+                Jobs
+              </Link>
+            </li>
+            <li>
+              <Link href="/categories" className="underline underline-offset-2">
+                Categories
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog" className="underline underline-offset-2">
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link href="/employers" className="underline underline-offset-2">
+                Employers (Post a job)
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="underline underline-offset-2">
+                Contact
+              </Link>
+            </li>
           </ul>
         </nav>
 
         {/* Popular reads */}
-        <nav aria-label="Popular articles">
+        <nav aria-label="Popular student job guides">
           <div className="font-semibold">Popular reads</div>
           <ul className="mt-3 space-y-2 text-sm">
             <li>
               <Link href="/blog/english-speaking-student-jobs-Amsterdam" className="underline underline-offset-2">
-                English-Speaking Student Jobs (2026)
+                English Speaking Student Jobs in Amsterdam
               </Link>
             </li>
             <li>
               <Link href="/blog/best-paying-student-jobs-Amsterdam-2026" className="underline underline-offset-2">
-                Best-Paying Student Jobs (2026)
+                Best Paying Student Jobs in Amsterdam (2026)
               </Link>
             </li>
             <li>
               <Link href="/blog/student-jobs-Amsterdam-complete-guide-2026" className="underline underline-offset-2">
-                Complete Guide (2026)
+                Student Jobs Amsterdam Complete Guide (2026)
               </Link>
             </li>
           </ul>
         </nav>
 
-        {/* Newsletter */}
-        <div>
-          <div className="font-semibold">Weekly jobs newsletter</div>
-          <p className="mt-2 text-sm text-slate-600">One email per week. Unsubscribe anytime.</p>
-          <form action="/api/lead" method="POST" className="mt-3 grid gap-2">
-            <input
-              name="name"
-              placeholder="Your name"
-              className="border rounded-xl px-4 py-3 text-sm"
-              aria-label="Your name"
-              required
-            />
-            <input
-              name="email"
-              type="email"
-              placeholder="you@example.com"
-              className="border rounded-xl px-4 py-3 text-sm"
-              aria-label="Your email"
-              required
-            />
-            <input type="hidden" name="city" value="Amsterdam" />
-            <button
-              className="w-full sm:w-auto rounded-xl px-4 py-3 border bg-black text-white text-sm"
-              type="submit"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
+        {/* City network */}
+        <nav aria-label="Student Jobs city network">
+          <div className="font-semibold">More cities</div>
+          <ul className="mt-3 space-y-2 text-sm">
+            <li>
+              <a
+                href="https://www.studentjobsamsterdam.nl/"
+                className="underline underline-offset-2"
+                rel="noopener"
+              >
+                Student Jobs Amsterdam
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://studentjobsgroningen.nl/"
+                className="underline underline-offset-2"
+                rel="noopener"
+              >
+                Student Jobs Groningen
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.studentjobsrotterdam.nl/"
+                className="underline underline-offset-2"
+                rel="noopener"
+              >
+                Student Jobs Rotterdam
+              </a>
+            </li>
+          </ul>
+
+          <p className="mt-3 text-xs text-slate-500">
+            Looking for a bijbaan in another city? Browse our local job boards and guides.
+          </p>
+        </nav>
       </div>
 
       {/* Bottom bar */}
@@ -86,10 +126,18 @@ export default function SiteFooter() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs text-slate-500">
           <div>© {year} Student Jobs Amsterdam. All rights reserved.</div>
           <div className="flex flex-wrap items-center gap-4">
-            <Link href="/privacy" className="underline underline-offset-2">Privacy</Link>
-            <Link href="/terms" className="underline underline-offset-2">Terms</Link>
-            <Link href="/sitemap.xml" className="underline underline-offset-2">Sitemap</Link>
-            <a href="#main" className="underline underline-offset-2">Back to top</a>
+            <Link href="/privacy" className="underline underline-offset-2">
+              Privacy
+            </Link>
+            <Link href="/terms" className="underline underline-offset-2">
+              Terms
+            </Link>
+            <Link href="/sitemap.xml" className="underline underline-offset-2">
+              Sitemap
+            </Link>
+            <a href="#main" className="underline underline-offset-2">
+              Back to top
+            </a>
           </div>
         </div>
       </div>
