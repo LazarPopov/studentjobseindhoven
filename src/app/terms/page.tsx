@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Terms & Conditions | Student Jobs Maastricht",
-  description: "Terms and conditions for using Student Jobs Maastricht.",
-  alternates: { canonical: "https://studentjobsmaastricht.nl/terms" },
+  title: "Terms & Conditions | Student Jobs Eindhoven",
+  description: "Terms and conditions for using Student Jobs Eindhoven.",
+  alternates: { canonical: "https://studentjobseindhoven.nl/terms" },
 };
 
 export default function TermsPage() {

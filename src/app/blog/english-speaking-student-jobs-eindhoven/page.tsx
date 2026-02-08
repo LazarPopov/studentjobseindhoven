@@ -1,37 +1,37 @@
-// src/app/blog/best-paying-student-jobs-maastricht-2026/page.tsx
+// src/app/blog/best-paying-student-jobs-eindhoven-2026/page.tsx
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-const BASE_URL = "https://studentjobsmaastricht.nl";
-const SLUG = "best-paying-student-jobs-maastricht-2026";
+const BASE_URL = "https://studentjobseindhoven.nl";
+const SLUG = "best-paying-student-jobs-eindhoven-2026";
 const CANONICAL = `${BASE_URL}/blog/${SLUG}`;
 
 const PUBLISH_DATE = "2026-01-02";
 const MODIFIED_DATE = "2026-02-07";
 
 // Use the real local image in /public/blog/
-const HERO_IMAGE_PATH = "/blog/maastricht-bridge.jpg";
+const HERO_IMAGE_PATH = "/blog/eindhoven-bridge.jpg";
 const OG_IMAGE_URL = `${BASE_URL}${HERO_IMAGE_PATH}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
-  title: "Best Paying Student Jobs in Maastricht (2026) | Student Jobs Maastricht",
+  title: "Best Paying Student Jobs in Eindhoven (2026) | Student Jobs Eindhoven",
   description:
-    "Discover the best paying student jobs in Maastricht in 2026. Compare high paying categories, shift bonuses, and quick certifications like BHV, HACCP, VCA, forklift, and barista.",
+    "Discover the best paying student jobs in Eindhoven in 2026. Compare high paying categories, shift bonuses, and quick certifications like BHV, HACCP, VCA, forklift, and barista.",
   keywords: [
-    "best paying student jobs Maastricht",
-    "highest paying student jobs Maastricht",
-    "high paying student jobs Maastricht",
-    "student wage Maastricht",
-    "student jobs Maastricht pay",
-    "English speaking student jobs Maastricht",
+    "best paying student jobs Eindhoven",
+    "highest paying student jobs Eindhoven",
+    "high paying student jobs Eindhoven",
+    "student wage Eindhoven",
+    "student jobs Eindhoven pay",
+    "English speaking student jobs Eindhoven",
     "evening weekend allowance Netherlands",
     "BHV certificate",
     "HACCP certificate",
     "VCA certificate",
     "forklift certificate Netherlands",
-    "barista course Maastricht",
+    "barista course Eindhoven",
   ],
   alternates: { canonical: CANONICAL },
   robots: {
@@ -46,13 +46,13 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Best Paying Student Jobs in Maastricht (2026)",
+    title: "Best Paying Student Jobs in Eindhoven (2026)",
     description:
-      "High paying categories, shift bonuses, and short certifications that can increase your hourly rate in Maastricht.",
+      "High paying categories, shift bonuses, and short certifications that can increase your hourly rate in Eindhoven.",
     url: CANONICAL,
     type: "article",
     locale: "en_NL",
-    siteName: "Student Jobs Maastricht",
+    siteName: "Student Jobs Eindhoven",
     publishedTime: PUBLISH_DATE,
     modifiedTime: MODIFIED_DATE,
     images: [
@@ -60,20 +60,20 @@ export const metadata: Metadata = {
         url: OG_IMAGE_URL,
         width: 1200,
         height: 630,
-        alt: "Maastricht bridge and canals",
+        alt: "Eindhoven bridge and canals",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best Paying Student Jobs in Maastricht (2026)",
+    title: "Best Paying Student Jobs in Eindhoven (2026)",
     description:
-      "Which student jobs pay the most in Maastricht. Categories, allowances, and certifications that raise your hourly rate.",
+      "Which student jobs pay the most in Eindhoven. Categories, allowances, and certifications that raise your hourly rate.",
     images: [OG_IMAGE_URL],
   },
 };
 
-export default function BestPayingGuideMaastricht() {
+export default function BestPayingGuideEindhoven() {
   const updatedLabel = new Date(MODIFIED_DATE).toLocaleDateString("en-NL", {
     year: "numeric",
     month: "long",
@@ -86,17 +86,17 @@ export default function BestPayingGuideMaastricht() {
         {/* HEADER */}
         <header className="max-w-3xl">
           <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
-            Best Paying Student Jobs in Maastricht (2026)
+            Best Paying Student Jobs in Eindhoven (2026)
           </h1>
 
           <p className="mt-3 text-sm text-slate-600">
-            By <span className="font-medium">Student Jobs Maastricht</span> • Updated {updatedLabel}
+            By <span className="font-medium">Student Jobs Eindhoven</span> • Updated {updatedLabel}
           </p>
 
           <figure className="mt-5 overflow-hidden rounded-2xl border bg-white">
             <Image
               src={HERO_IMAGE_PATH}
-              alt="Maastricht bridge and canals"
+              alt="Eindhoven bridge and canals"
               width={1280}
               height={720}
               priority
@@ -105,28 +105,28 @@ export default function BestPayingGuideMaastricht() {
             <figcaption className="px-4 py-3 text-xs text-slate-600">
               Photo credit:{" "}
               <a
-                href="https://www.maastrichtprivateboat.com"
+                href="https://www.eindhovenprivateboat.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline"
               >
-                maastrichtprivateboat.com
+                eindhovenprivateboat.com
               </a>
             </figcaption>
           </figure>
 
           {/* Quick links to convert */}
           <div className="mt-6 flex flex-wrap gap-2">
-            <Link href="/jobs?city=Maastricht" className="rounded-full border px-3 py-1 text-sm underline">
-              All vacancies (Maastricht)
+            <Link href="/jobs?city=Eindhoven" className="rounded-full border px-3 py-1 text-sm underline">
+              All vacancies (Eindhoven)
             </Link>
-            <Link href="/jobs?city=Maastricht&english=true" className="rounded-full border px-3 py-1 text-sm underline">
+            <Link href="/jobs?city=Eindhoven&english=true" className="rounded-full border px-3 py-1 text-sm underline">
               English friendly
             </Link>
-            <Link href="/jobs?city=Maastricht&evening=true" className="rounded-full border px-3 py-1 text-sm underline">
+            <Link href="/jobs?city=Eindhoven&evening=true" className="rounded-full border px-3 py-1 text-sm underline">
               Evening shifts
             </Link>
-            <Link href="/jobs?city=Maastricht&weekend=true" className="rounded-full border px-3 py-1 text-sm underline">
+            <Link href="/jobs?city=Eindhoven&weekend=true" className="rounded-full border px-3 py-1 text-sm underline">
               Weekend shifts
             </Link>
           </div>
@@ -200,15 +200,15 @@ export default function BestPayingGuideMaastricht() {
             "
           >
             <p>
-              If you want a higher hourly rate in Maastricht, focus on two levers: role type (category) and premium
+              If you want a higher hourly rate in Eindhoven, focus on two levers: role type (category) and premium
               shifts. Then add one short certification that unlocks better duties. This guide shows the most common
               paths students use in 2026 to earn more.
             </p>
 
-            <h2 id="top-categories">Top paying categories for students in Maastricht</h2>
+            <h2 id="top-categories">Top paying categories for students in Eindhoven</h2>
             <p>
               Pay depends on age, contract type, and experience. These categories often land on the higher end for
-              student jobs in Maastricht:
+              student jobs in Eindhoven:
             </p>
             <ul>
               <li>
@@ -235,7 +235,7 @@ export default function BestPayingGuideMaastricht() {
             </ul>
 
             <h2 id="shift-bonuses">Shift bonuses and allowances that boost pay</h2>
-            <p>In Maastricht, schedule choice can move your effective hourly rate more than people expect:</p>
+            <p>In Eindhoven, schedule choice can move your effective hourly rate more than people expect:</p>
             <ul>
               <li>
                 <strong>Evening, night, and weekend allowances</strong>: common in logistics, events, hospitality, and some delivery roles.
@@ -311,8 +311,8 @@ export default function BestPayingGuideMaastricht() {
             <div className="rounded-2xl border p-5 bg-white">
               <div className="font-semibold text-lg">Ready to earn more?</div>
               <p className="mt-1">
-                Start here: <Link href="/jobs?city=Maastricht">see all jobs in Maastricht</Link>,{" "}
-                <Link href="/jobs?city=Maastricht&english=true">English friendly only</Link>, and browse{" "}
+                Start here: <Link href="/jobs?city=Eindhoven">see all jobs in Eindhoven</Link>,{" "}
+                <Link href="/jobs?city=Eindhoven&english=true">English friendly only</Link>, and browse{" "}
                 <Link href="/categories">categories</Link>. If you are an employer,{" "}
                 <Link href="/employers">feature your job</Link>.
               </p>
@@ -320,7 +320,7 @@ export default function BestPayingGuideMaastricht() {
 
             <h2 id="faq">FAQ</h2>
 
-            <h3>Which student jobs pay the most in Maastricht?</h3>
+            <h3>Which student jobs pay the most in Eindhoven?</h3>
             <p>
               Often tutoring, logistics shifts with allowances, event lead roles, and sales with commission. Skilled hospitality roles like barista or shift lead can also pay above entry level.
             </p>
@@ -344,25 +344,25 @@ export default function BestPayingGuideMaastricht() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Article",
-              headline: "Best Paying Student Jobs in Maastricht (2026)",
+              headline: "Best Paying Student Jobs in Eindhoven (2026)",
               description:
-                "High paying categories, shift bonuses, and certifications that can increase your hourly rate as a student in Maastricht.",
+                "High paying categories, shift bonuses, and certifications that can increase your hourly rate as a student in Eindhoven.",
               image: [OG_IMAGE_URL],
               datePublished: PUBLISH_DATE,
               dateModified: MODIFIED_DATE,
               inLanguage: "en-NL",
               author: {
                 "@type": "Organization",
-                name: "Student Jobs Maastricht",
+                name: "Student Jobs Eindhoven",
                 url: `${BASE_URL}/`,
               },
               publisher: {
                 "@type": "Organization",
-                name: "Student Jobs Maastricht",
+                name: "Student Jobs Eindhoven",
                 url: `${BASE_URL}/`,
               },
               mainEntityOfPage: { "@type": "WebPage", "@id": CANONICAL },
-              about: [{ "@type": "Place", name: "Maastricht" }],
+              about: [{ "@type": "Place", name: "Eindhoven" }],
             }),
           }}
         />
@@ -375,7 +375,7 @@ export default function BestPayingGuideMaastricht() {
               "@type": "BreadcrumbList",
               itemListElement: [
                 { "@type": "ListItem", position: 1, name: "Blog", item: `${BASE_URL}/blog` },
-                { "@type": "ListItem", position: 2, name: "Best Paying Student Jobs in Maastricht (2026)", item: CANONICAL },
+                { "@type": "ListItem", position: 2, name: "Best Paying Student Jobs in Eindhoven (2026)", item: CANONICAL },
               ],
             }),
           }}
@@ -391,7 +391,7 @@ export default function BestPayingGuideMaastricht() {
               mainEntity: [
                 {
                   "@type": "Question",
-                  name: "Which student jobs pay the most in Maastricht?",
+                  name: "Which student jobs pay the most in Eindhoven?",
                   acceptedAnswer: {
                     "@type": "Answer",
                     text:
@@ -427,7 +427,7 @@ export default function BestPayingGuideMaastricht() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "HowTo",
-              name: "How to boost your student wage in Maastricht in 2 weeks",
+              name: "How to boost your student wage in Eindhoven in 2 weeks",
               image: [OG_IMAGE_URL],
               totalTime: "P14D",
               inLanguage: "en-NL",
